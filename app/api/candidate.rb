@@ -11,5 +11,15 @@ module Candidate
         ]}
       end
     end
+
+    resource :dapil do
+      desc "Return all Electoral Districts"
+      get do
+        {results: [
+          count: ElectoralDistrict.count,
+          dapil: ElectoralDistrict.select("id, nama")
+        ]}
+      end
+    end
   end
 end
