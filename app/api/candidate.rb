@@ -30,6 +30,21 @@ module Candidate
           parties: Party.select("id, nama, singkatan, situs")
         ]}
       end
+
+      desc "Return a Party"
+      params do
+        requires :id, type: Integer, desc: "Party ID."
+      end
+      route_param :id do
+        get do
+          party = Party.select("id, nama, singkatan, situs").where(id: params[:id])
+
+          {results: [
+            count: party.count,
+            parties: party
+          ]}
+        end
+      end
     end
   end
 end
