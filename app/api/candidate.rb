@@ -21,5 +21,15 @@ module Candidate
         ]}
       end
     end
+
+    resource :parties do
+      desc "Return all Parties"
+      get do
+        {results: [
+          count: Party.count,
+          parties: Party.select("id, nama, singkatan, situs")
+        ]}
+      end
+    end
   end
 end

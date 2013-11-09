@@ -11,12 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131109125536) do
+ActiveRecord::Schema.define(version: 20131109130724) do
 
   create_table "electoral_districts", force: true do |t|
     t.string  "nama"
     t.string  "singkatan"
     t.integer "provinsi_id"
+  end
+
+  create_table "parties", force: true do |t|
+    t.string "nama"
+    t.string "singkatan"
+    t.string "situs"
+    t.string "facebook"
+    t.string "twitter"
   end
 
   create_table "provinces", force: true do |t|
