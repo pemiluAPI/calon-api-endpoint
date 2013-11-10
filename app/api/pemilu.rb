@@ -49,9 +49,18 @@ module Pemilu
     resource :dapil do
       desc "Return all Electoral Districts"
       get do
+        electoral_districts = Array.new
+        ElectoralDistrict.select("id, nama, provinsi_id").find_each do |electoral_district|
+          electoral_districts << {
+            id: electoral_district.id,
+            nama: electoral_district.nama,
+            provinsi: electoral_district.province
+          }
+        end
+
         {results: [
-          count: ElectoralDistrict.count,
-          dapil: ElectoralDistrict.select("id, nama")
+          count: electoral_districts.count,
+          dapil: electoral_districts
         ]}
       end
     end
