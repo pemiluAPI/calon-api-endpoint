@@ -30,9 +30,18 @@ module Pemilu
     resource :provinces do
       desc "Return all Provinces"
       get do
+        provinces = Array.new
+        Province.select("id, nama_lengkap").find_each do |province|
+          provinces << {
+            id: province.id,
+            nama: province.nama_lengkap,
+            dapil: province.electoral_districts.select("id, nama")
+          }
+        end
+
         {results: [
           count: Province.count,
-          provinsi: Province.select("id, nama_lengkap")
+          provinsi: provinces
         ]}
       end
     end
