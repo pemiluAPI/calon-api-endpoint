@@ -44,4 +44,7 @@ RSpec.configure do |config|
   config.include RSpec::Rails::RequestExampleGroup, type: :request, example_group: {
     file_path: /spec\/api/
   }
+
+  # Repeating "FactoryGirl" is too verbose for me
+  config.include FactoryGirl::Syntax::Methods
 end
