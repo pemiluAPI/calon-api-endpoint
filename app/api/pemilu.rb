@@ -5,9 +5,26 @@ module Pemilu
     resource :candidates do
       desc "Return all Candidates"
       get do
+        candidates = Array.new
+
+        Candidate.find_each do |candidate|
+          candidates << {
+            id: candidate.id,
+            lembaga: candidate.lembaga,
+            nama: candidate.nama,
+            kelamin: candidate.kelamin,
+            tinggal: candidate.tinggal,
+            calon: candidate.calon_urutan,
+            provinsi: {
+              id: candidate.province.id,
+              nama: candidate.province.nama_lengkap
+            }
+          } unless candidate.province.nil?
+        end
+
         {results: [
-          count: Candidate.count,
-          candidates: Candidate.select("id, calon_id, nama")
+          count: candidates.count,
+          candidates: candidates
         ]}
       end
 
