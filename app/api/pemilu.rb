@@ -1,13 +1,38 @@
+module CandidateHelpers
+  def build_province(candidate)
+    candidate.province.nil? ? {} : {
+      id: candidate.province.id,
+      nama: candidate.province.nama_lengkap
+    }
+  end
+
+  def build_electoral_district(candidate)
+    candidate.electoral_district.nil? ? {} : {
+      id: candidate.electoral_district.id,
+      nama: candidate.electoral_district.nama
+    }
+  end
+
+  def build_party(candidate)
+    candidate.party.nil? ? {} : {
+      id: candidate.party.id,
+      nama: candidate.party.nama
+    }
+  end
+end
+
 module Pemilu
   class API < Grape::API
     format :json
 
     resource :candidates do
+      helpers CandidateHelpers
+
       desc "Return all Candidates"
       get do
         candidates = Array.new
 
-        Candidate.find_each do |candidate|
+        Candidate.includes(:province).find_each do |candidate|
           candidates << {
             id: candidate.id,
             lembaga: candidate.lembaga,
@@ -15,11 +40,10 @@ module Pemilu
             kelamin: candidate.kelamin,
             tinggal: candidate.tinggal,
             calon: candidate.calon_urutan,
-            provinsi: {
-              id: candidate.province.id,
-              nama: candidate.province.nama_lengkap
-            }
-          } unless candidate.province.nil?
+            provinsi: build_province(candidate),
+            dapil: build_electoral_district(candidate),
+            partai: build_party(candidate)
+          }
         end
 
         {results: [
