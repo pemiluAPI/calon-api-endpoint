@@ -45,6 +45,10 @@ gem 'simplecov', :require => false, :group => :test
 
 gem 'thin', "~> 1.5.1"
 gem 'rake', "~> 10.1.0"
+gem 'capistrano', "~> 3.0.0"
+gem 'capistrano-bundler'
+gem 'capistrano-rails'
+gem 'capistrano-rbenv', github: "capistrano/rbenv"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
