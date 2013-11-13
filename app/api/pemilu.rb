@@ -2,7 +2,7 @@ module CandidateHelpers
   def build_province(candidate)
     candidate.province.nil? ? {} : {
       id: candidate.province.id,
-      nama: candidate.province.nama_lengkap
+      nama: candidate.province.nama
     }
   end
 
@@ -84,10 +84,10 @@ module Pemilu
       desc "Return all Provinces"
       get do
         provinces = Array.new
-        Province.select("id, nama_lengkap").find_each do |province|
+        Province.select("id, nama").find_each do |province|
           provinces << {
             id: province.id,
-            nama: province.nama_lengkap,
+            nama: province.nama,
             dapil: province.electoral_districts.select("id, nama")
           }
         end

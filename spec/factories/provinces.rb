@@ -1,11 +1,11 @@
 FactoryGirl.define do
   factory :aceh, class: Province do
     id 11
-    nama_lengkap "Aceh"
+    nama "Aceh"
   end
 
   factory :jambi, class: Province do
     id 15
-    nama_lengkap "Jambi"
+    nama "Jambi"
   end
 end

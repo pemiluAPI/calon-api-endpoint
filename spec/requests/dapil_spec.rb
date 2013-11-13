@@ -23,7 +23,7 @@ describe Pemilu::API do
                 nama: @dapil_aceh1.nama,
                 provinsi: {
                   id: @aceh.id,
-                  nama: @aceh.nama_lengkap
+                  nama: @aceh.nama
                 }
               },
               {
@@ -31,7 +31,7 @@ describe Pemilu::API do
                 nama: @dapil_aceh2.nama,
                 provinsi: {
                   id: @aceh.id,
-                  nama: @aceh.nama_lengkap
+                  nama: @aceh.nama
                 }
               },
               {
@@ -39,7 +39,7 @@ describe Pemilu::API do
                 nama: @dapil_jambi.nama,
                 provinsi: {
                   id: @jambi.id,
-                  nama: @jambi.nama_lengkap
+                  nama: @jambi.nama
                 }
               }
             ]

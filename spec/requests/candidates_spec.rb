@@ -25,7 +25,7 @@ describe Pemilu::API do
                 calon: @dpd1.calon_id,
                 provinsi: {
                   id: @aceh.id,
-                  nama: @aceh.nama_lengkap
+                  nama: @aceh.nama
                 },
                 dapil: {},
                 partai: {}
@@ -39,7 +39,7 @@ describe Pemilu::API do
                 calon: @dpd2.calon_id,
                 provinsi: {
                   id: @aceh.id,
-                  nama: @aceh.nama_lengkap
+                  nama: @aceh.nama
                 },
                 dapil: {},
                 partai: {}
@@ -69,7 +69,7 @@ describe Pemilu::API do
                 calon: @dpd1.calon_id,
                 provinsi: {
                   id: @aceh.id,
-                  nama: @aceh.nama_lengkap
+                  nama: @aceh.nama
                 },
                 dapil: {},
                 partai: {}

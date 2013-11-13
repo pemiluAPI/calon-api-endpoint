@@ -19,7 +19,7 @@ describe Pemilu::API do
           provinsi: [
             {
               id: @aceh.id,
-              nama: @aceh.nama_lengkap,
+              nama: @aceh.nama,
               dapil: [
                 {
                   id: @dapil_aceh1.id,
@@ -33,7 +33,7 @@ describe Pemilu::API do
             },
             {
               id: @jambi.id,
-              nama: @jambi.nama_lengkap,
+              nama: @jambi.nama,
               dapil: [
                 {
                   id: @dapil_jambi.id,
