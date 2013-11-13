@@ -43,6 +43,8 @@ end
 gem 'factory_girl_rails', "~> 4.2.1"
 gem 'simplecov', :require => false, :group => :test
 
+gem 'thin', "~> 1.5.1"
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
