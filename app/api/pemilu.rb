@@ -39,7 +39,7 @@ module Pemilu
             nama: candidate.nama,
             kelamin: candidate.kelamin,
             tinggal: candidate.tinggal,
-            calon: candidate.calon_urutan,
+            calon: candidate.calon_id,
             provinsi: build_province(candidate),
             dapil: build_electoral_district(candidate),
             partai: build_party(candidate)
@@ -58,11 +58,23 @@ module Pemilu
       end
       route_param :id do
         get do
-          candidate = Candidate.select("id, calon_id, nama").where(calon_id: params[:id])
+          candidate = Candidate.find_by(calon_id: params[:id])
 
           {results: [
-            count: candidate.count,
-            candidates: candidate
+            count: 1,
+            candidates: [
+              {
+                id: candidate.id,
+                lembaga: candidate.lembaga,
+                nama: candidate.nama,
+                kelamin: candidate.kelamin,
+                tinggal: candidate.tinggal,
+                calon: candidate.calon_id,
+                provinsi: build_province(candidate),
+                dapil: build_electoral_district(candidate),
+                partai: build_party(candidate)
+              }
+            ]
           ]}
         end
       end
