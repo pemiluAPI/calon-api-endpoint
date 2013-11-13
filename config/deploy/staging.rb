@@ -19,19 +19,19 @@ set :rbenv_ruby, '2.0.0-p247'
 namespace :deploy do
   task :start do
     on roles(:all) do
-      execute "cd #{current_path};bundle exec thin -p 3065 -e #{fetch(:stage)} start"
+      execute "cd #{current_path};#{fetch(:rbenv_path)}/bin/rbenv exec bundle exec thin -p 3065 -e #{fetch(:stage)} -d start"
     end
   end
 
   task :restart do
     on roles(:all) do
-      execute "cd #{current_path};bundle exec thin -p 3065 -e #{fetch(:stage)} restart"
+      execute "cd #{current_path};#{fetch(:rbenv_path)}/bin/rbenv exec bundle exec thin -p 3065 -e #{fetch(:stage)} restart"
     end
   end
 
   task :stop do
     on roles(:all) do
-      execute "cd #{current_path};bundle exec thin -p 3065 -e #{fetch(:stage)} stop"
+      execute "cd #{current_path};#{fetch(:rbenv_path)}/bin/rbenv exec bundle exec thin -p 3065 -e #{fetch(:stage)} stop"
     end
   end
 
