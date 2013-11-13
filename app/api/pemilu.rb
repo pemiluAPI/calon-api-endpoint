@@ -32,18 +32,29 @@ module Pemilu
       get do
         candidates = Array.new
 
-        Candidate.includes(:province, :electoral_district, :party).find_each do |candidate|
-          candidates << {
-            id: candidate.id,
-            lembaga: candidate.lembaga,
-            nama: candidate.nama,
-            kelamin: candidate.kelamin,
-            tinggal: candidate.tinggal,
-            calon: candidate.calon_id,
-            provinsi: build_province(candidate),
-            dapil: build_electoral_district(candidate),
-            partai: build_party(candidate)
-          }
+        # Prepare conditions based on params
+        conditions = Hash.new
+        conditions[:lembaga] = params[:lembaga] unless params[:lembaga].nil?
+        conditions[:kelamin] = params[:kelamin] unless params[:kelamin].nil?
+        conditions[:dapil_id] = params[:dapil] unless params[:dapil].nil?
+        conditions[:partai_id] = params[:partai] unless params[:partai].nil?
+        search = ["nama LIKE ?", "%#{params[:nama]}%"]
+
+        Candidate.includes(:province, :electoral_district, :party)
+          .where(conditions)
+          .where(search)
+          .find_each do |candidate|
+            candidates << {
+              id: candidate.id,
+              lembaga: candidate.lembaga,
+              nama: candidate.nama,
+              kelamin: candidate.kelamin,
+              tinggal: candidate.tinggal,
+              calon: candidate.calon_id,
+              provinsi: build_province(candidate),
+              dapil: build_electoral_district(candidate),
+              partai: build_party(candidate)
+            }
         end
 
         {results: [
