@@ -32,7 +32,7 @@ module Pemilu
       get do
         candidates = Array.new
 
-        Candidate.includes(:province).find_each do |candidate|
+        Candidate.includes(:province, :electoral_district, :party).find_each do |candidate|
           candidates << {
             id: candidate.id,
             lembaga: candidate.lembaga,
