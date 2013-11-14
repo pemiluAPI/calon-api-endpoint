@@ -114,7 +114,7 @@ module Pemilu
       desc "Return all Electoral Districts"
       get do
         electoral_districts = Array.new
-        ElectoralDistrict.select("id, nama, provinsi_id").find_each do |electoral_district|
+        ElectoralDistrict.includes(:province).select("id, nama, provinsi_id").find_each do |electoral_district|
           electoral_districts << {
             id: electoral_district.id,
             nama: electoral_district.nama,
