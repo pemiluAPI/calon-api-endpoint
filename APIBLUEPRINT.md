@@ -7,10 +7,13 @@ The Candidate API is a service that provides information about candidates runnin
 # Group Candidates
 Candidates related resources of the **Candidates API**
 
-## Candidates Collection [/candidates?apiKey={apiKey}&lembaga={lembaga}&kelamin={kelamin}&dapil={dapil}&partai={partai}]
+## Candidates Collection [/candidates?apiKey={apiKey}&lembaga={lembaga}&kelamin={kelamin}&dapil={dapil}&partai={partai}&nama={nama}&limit={limit}&offset={offset}]
 
 + Parameters
-    + partai (optional, string, `01`) ... String id of the `partai` (party) that the candidate is a member of
+    + offset (optional, number, `300`) ... Number the offset from the beginning of the list of records to return (use in combination with `limit` to support pagination)
+    + limit (optional, number, `25`) ... Number the number of records to return (use in combination with `offset` to support pagination)
+    + nama (optional, string, `afzal`) ... String full or partial `nama` (name) of the candidate. Will return all matching records.
+    + partai (optional, string, `1`) ... String id of the `partai` (party) that the candidate is a member of
     + dapil (optional, string, `1101`) ... String id of the `dapil` (electoral district) or `provinsi` (province) that the candidate is running in.
     + kelamin (optional, string, `L`) ... String `kelamin` (gender) of the candidate.
     + lembaga (optional, string, `DPD`) ... String `lembaga` (legislative body) that the candidate is running for.
