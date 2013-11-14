@@ -23,6 +23,7 @@ end
 
 module Pemilu
   class API < Grape::API
+    prefix 'api'
     format :json
 
     resource :candidates do
