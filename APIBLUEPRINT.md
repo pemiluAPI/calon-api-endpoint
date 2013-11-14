@@ -31,7 +31,7 @@ Candidates related resources of the **Candidates API**
                             "kelamin": "L",
                             "domisili": "KOTA BANDA ACEH",
                             "provinsi": {
-                                "id": "01",
+                                "id": "11",
                                 "nama": "ACEH"
                             },
                             "dapil": {},
@@ -45,7 +45,7 @@ Candidates related resources of the **Candidates API**
                             "kelamin": "L",
                             "domisili": "KOTA SUBULUSSALAM",
                             "provinsi": {
-                                "id": "01",
+                                "id": "11",
                                 "nama": "ACEH"
                             },
                             "dapil": {},
@@ -59,15 +59,15 @@ Candidates related resources of the **Candidates API**
                             "kelamin": "L",
                             "domisili": "KOTA TANGERANG SELATAN",
                             "provinsi": {
-                                "id": "01",
+                                "id": "11",
                                 "nama": "ACEH"
                             },
                             "dapil": {
-                                "id": "01",
+                                "id": "1101",
                                 "nama": "ACEH I"
                             },
                             "partai": {
-                                "id": "01",
+                                "id": "1",
                                 "nama": "Partai NasDem"
                             },
                             "urutan": "1"
@@ -79,15 +79,15 @@ Candidates related resources of the **Candidates API**
                             "kelamin": "L",
                             "domisili": "KOTA BANDA ACEH",
                             "provinsi": {
-                                "id": "01",
+                                "id": "11",
                                 "nama": "ACEH"
                             },
                             "dapil": {
-                                "id": "01",
+                                "id": "1101",
                                 "nama": "ACEH I"
                             },
                             "partai": {
-                                "id": "01",
+                                "id": "1",
                                 "nama": "Partai NasDem"
                             },
                             "urutan": "2"
@@ -125,7 +125,7 @@ A single Candidates object with all its details
                                 "kelamin": "L",
                                 "domisili": "KOTA LANGSA",
                                 "provinsi": {
-                                    "id": "01",
+                                    "id": "11",
                                     "nama": "ACEH"
                                 },
                                 "dapil": {},
@@ -155,19 +155,19 @@ Parties related resources of the **Candidates API**
                     "count": 3,
                     "parties": [
                         {
-                            "id": "01",
+                            "id": "1",
                             "nama": "Partai NasDem",
                             "singkatan": "Partai NasDem",
                             "situs": "http://www.partainasdem.org/"
                         },
                         {
-                            "id": "02",
+                            "id": "2",
                             "nama": "Partai Kebangkitan Bangsa",
                             "singkatan": "PKB",
                             "situs": "http://www.dpp.pkb.or.id/"
                         },
                         {
-                            "id": "03",
+                            "id": "3",
                             "nama": "Partai Keadilan Sejahtera",
                             "singkatan": "PKS",
                             "situs": "http://www.pks.or.id/"
@@ -199,7 +199,7 @@ A single Parties object with all its details
                         "count": 1,
                         "parties": [
                             {
-                                "id": "03",
+                                "id": "3",
                                 "nama": "Partai Keadilan Sejahtera",
                                 "singkatan": "PKS",
                                 "situs": "http://www.pks.or.id/"
