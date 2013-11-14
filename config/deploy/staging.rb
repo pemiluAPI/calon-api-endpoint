@@ -16,6 +16,10 @@ set :keep_releases, 2
 set :rbenv_type, :user
 set :rbenv_ruby, '2.0.0-p247'
 
+def remote_file_exists?(full_path)
+  'true' == capture("if [ -e #{full_path} ]; then echo 'true'; fi").strip
+end
+
 namespace :deploy do
   task :start do
     on roles(:all) do
@@ -25,7 +29,7 @@ namespace :deploy do
 
   task :restart do
     on roles(:all) do
-      if File.exist? "#{current_path}/tmp/pids/thin.pid"
+      if remote_file_exists? "#{current_path}/tmp/pids/thin.pid"
         execute "cd #{current_path};#{fetch(:rbenv_path)}/bin/rbenv exec bundle exec thin -p 3065 -e #{fetch(:stage)} restart"
       end
     end
@@ -42,7 +46,6 @@ namespace :deploy do
       execute "ln -s #{deploy_to}/shared/config/database.yml #{release_path}/config/database.yml"
       execute "mkdir #{release_path}/tmp"
       execute "mkdir #{release_path}/tmp/pids"
-      execute "ln -s #{deploy_to}/shared/tmp/pids/ #{release_path}/tmp/pids/"
     end
   end
 end
