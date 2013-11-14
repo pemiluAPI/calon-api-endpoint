@@ -25,7 +25,9 @@ namespace :deploy do
 
   task :restart do
     on roles(:all) do
-      execute "cd #{current_path};#{fetch(:rbenv_path)}/bin/rbenv exec bundle exec thin -p 3065 -e #{fetch(:stage)} restart"
+      if File.exist? "#{current_path}/tmp/pids/thin.pid"
+        execute "cd #{current_path};#{fetch(:rbenv_path)}/bin/rbenv exec bundle exec thin -p 3065 -e #{fetch(:stage)} restart"
+      end
     end
   end
 
@@ -38,6 +40,9 @@ namespace :deploy do
   task :symlink_config_files do
     on roles(:all) do
       execute "ln -s #{deploy_to}/shared/config/database.yml #{release_path}/config/database.yml"
+      execute "mkdir #{release_path}/tmp"
+      execute "mkdir #{release_path}/tmp/pids"
+      execute "ln -s #{deploy_to}/shared/tmp/pids/ #{release_path}/tmp/pids/"
     end
   end
 end
