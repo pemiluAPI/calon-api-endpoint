@@ -36,7 +36,7 @@ Candidates related resources of the **Candidates API**
                             },
                             "dapil": {},
                             "partai": {},
-                            "calon": "01"
+                            "urutan": "1"
                         },
                         {
                             "id": "DPD1103",
@@ -50,7 +50,7 @@ Candidates related resources of the **Candidates API**
                             },
                             "dapil": {},
                             "partai": {},
-                            "calon": "03"
+                            "urutan": "3"
                         },
                         {
                             "id": "DPR11010101",
@@ -70,7 +70,7 @@ Candidates related resources of the **Candidates API**
                                 "id": "01",
                                 "nama": "Partai NasDem"
                             },
-                            "calon": "01"
+                            "urutan": "1"
                         },
                         {
                             "id": "DPR11010102",
@@ -90,7 +90,7 @@ Candidates related resources of the **Candidates API**
                                 "id": "01",
                                 "nama": "Partai NasDem"
                             },
-                            "calon": "02"
+                            "urutan": "2"
                         }
                     ]
                 }
@@ -130,7 +130,7 @@ A single Candidates object with all its details
                                 },
                                 "dapil": {},
                                 "partai": {},
-                                "calon": "5"
+                                "urutan": "5"
                             }
                         ]
                     }
