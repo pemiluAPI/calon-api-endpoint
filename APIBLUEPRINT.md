@@ -26,6 +26,7 @@ Candidates related resources of the **Candidates API**
             "results": [
                 {
                     "count": 4,
+                    "total": 4,
                     "candidates": [
                         {
                             "id": "DPD1101",
@@ -120,6 +121,7 @@ A single Candidates object with all its details
                 "results": [
                     {
                         "count": 1,
+                        "total": 1,
                         "candidates": [
                             {
                                 "id": "DPD1105",
