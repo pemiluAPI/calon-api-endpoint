@@ -29,7 +29,7 @@ Candidates related resources of the **Candidates API**
                             "lembaga": "DPD",
                             "nama": "MUHAMMAD AFZAL MAHFUZ, S.H.",
                             "kelamin": "L",
-                            "tinggal": "KOTA BANDA ACEH",
+                            "domisili": "KOTA BANDA ACEH",
                             "provinsi": {
                                 "id": "01",
                                 "nama": "ACEH"
@@ -43,7 +43,7 @@ Candidates related resources of the **Candidates API**
                             "lembaga": "DPD",
                             "nama": "Drs. H. ANHARUDDIN, S.E., M.M.",
                             "kelamin": "L",
-                            "tinggal": "KOTA SUBULUSSALAM",
+                            "domisili": "KOTA SUBULUSSALAM",
                             "provinsi": {
                                 "id": "01",
                                 "nama": "ACEH"
@@ -57,7 +57,7 @@ Candidates related resources of the **Candidates API**
                             "lembaga": "DPR",
                             "nama": "Prof. Dr. BACHTIAR ALY, MA",
                             "kelamin": "L",
-                            "tinggal": "KOTA TANGERANG SELATAN",
+                            "domisili": "KOTA TANGERANG SELATAN",
                             "provinsi": {
                                 "id": "01",
                                 "nama": "ACEH"
@@ -77,7 +77,7 @@ Candidates related resources of the **Candidates API**
                             "lembaga": "DPR",
                             "nama": "Drs. H. T PRIBADI",
                             "kelamin": "L",
-                            "tinggal": "KOTA BANDA ACEH",
+                            "domisili": "KOTA BANDA ACEH",
                             "provinsi": {
                                 "id": "01",
                                 "nama": "ACEH"
@@ -123,7 +123,7 @@ A single Candidates object with all its details
                                 "lembaga": "DPD",
                                 "nama": "H. ASY'ARI, S.Pd.I.",
                                 "kelamin": "L",
-                                "tinggal": "KOTA LANGSA",
+                                "domisili": "KOTA LANGSA",
                                 "provinsi": {
                                     "id": "01",
                                     "nama": "ACEH"
