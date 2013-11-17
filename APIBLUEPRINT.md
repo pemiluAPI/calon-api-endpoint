@@ -41,7 +41,8 @@ Candidates related resources of the **Candidates API**
                             },
                             "dapil": {},
                             "partai": {},
-                            "urutan": "1"
+                            "urutan": "1",
+                            "foto_url": "http://dct.kpu.go.id/images/foto/DPD/11.%20NAD/01.jpg"
                         },
                         {
                             "id": "DPD1103",
@@ -55,7 +56,8 @@ Candidates related resources of the **Candidates API**
                             },
                             "dapil": {},
                             "partai": {},
-                            "urutan": "3"
+                            "urutan": "3",
+                            "foto_url": "http://dct.kpu.go.id/images/foto/DPD/11.%20NAD/03.jpg"
                         },
                         {
                             "id": "DPR11010101",
@@ -75,7 +77,8 @@ Candidates related resources of the **Candidates API**
                                 "id": "1",
                                 "nama": "Partai NasDem"
                             },
-                            "urutan": "1"
+                            "urutan": "1",
+                            "foto_url": "http://dct.kpu.go.id/images/foto/DPR/1101.%20ACEH%20I/01.%20NASDEM/01.%20PROF.%20DR.%20BACHTIAR%20ALY%2C%20MA.jpg"
                         },
                         {
                             "id": "DPR11010102",
@@ -95,7 +98,8 @@ Candidates related resources of the **Candidates API**
                                 "id": "1",
                                 "nama": "Partai NasDem"
                             },
-                            "urutan": "2"
+                            "urutan": "2",
+                            "foto_url": "http://dct.kpu.go.id/images/foto/DPR/1101.%20ACEH%20I/01.%20NASDEM/02.%20DRS.%20H.T.%20PRIBADI.JPG"
                         }
                     ]
                 }
@@ -136,7 +140,8 @@ A single Candidates object with all its details
                                 },
                                 "dapil": {},
                                 "partai": {},
-                                "urutan": "5"
+                                "urutan": "5",
+                                "foto_url": "http://dct.kpu.go.id/images/foto/DPD/11.%20NAD/05.jpg"
                             }
                         ]
                     }
