@@ -147,10 +147,12 @@ module Pemilu
     resource :parties do
       desc "Return all Parties"
       get do
-        {results: [
-          count: Party.count,
-          parties: Party.select("id, nama, singkatan, situs")
-        ]}
+        {
+          results: {
+            count: Party.count,
+            parties: Party.select("id, nama, singkatan, situs")
+          }
+        }
       end
 
       desc "Return a Party"
@@ -161,10 +163,12 @@ module Pemilu
         get do
           party = Party.select("id, nama, singkatan, situs").where(id: params[:id])
 
-          {results: [
-            count: party.count,
-            parties: party
-          ]}
+          {
+            results: {
+              count: party.count,
+              parties: party
+            }
+          }
         end
       end
     end
