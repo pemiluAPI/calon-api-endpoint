@@ -11,7 +11,7 @@ describe Pemilu::API do
       get "/api/parties"
       response.status.should == 200
       response.body.should == {
-        results: [
+        results: {
           count: 2,
           parties: [
             {
@@ -27,7 +27,7 @@ describe Pemilu::API do
               situs: @pan.situs
             }
           ]
-        ]
+        }
       }.to_json
     end
   end
