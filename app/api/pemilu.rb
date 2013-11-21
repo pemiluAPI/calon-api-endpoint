@@ -118,10 +118,12 @@ module Pemilu
           }
         end
 
-        {results: [
-          count: Province.count,
-          provinsi: provinces
-        ]}
+        {
+          results: {
+            count: Province.count,
+            provinsi: provinces
+          }
+        }
       end
     end
 

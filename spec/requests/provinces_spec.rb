@@ -14,7 +14,7 @@ describe Pemilu::API do
       get "/api/provinces"
       response.status.should == 200
       response.body.should == {
-        results: [
+        results: {
           count: 2,
           provinsi: [
             {
@@ -42,7 +42,7 @@ describe Pemilu::API do
               ]
             }
           ]
-        ]
+        }
       }.to_json
     end
   end
