@@ -34,12 +34,17 @@ module Pemilu
         candidates = Array.new
 
         # Prepare conditions based on params
+        valid_params = {
+          lembaga: 'lembaga',
+          kelamin: 'kelamin',
+          dapil: 'dapil_id',
+          partai: 'partai_id',
+          provinsi: 'provinsi_id'
+        }
         conditions = Hash.new
-        conditions[:lembaga] = params[:lembaga] unless params[:lembaga].nil?
-        conditions[:kelamin] = params[:kelamin] unless params[:kelamin].nil?
-        conditions[:dapil_id] = params[:dapil] unless params[:dapil].nil?
-        conditions[:partai_id] = params[:partai] unless params[:partai].nil?
-        conditions[:provinsi_id] = params[:provinsi] unless params[:provinsi].nil?
+        valid_params.each_pair do |key, value|
+          conditions[value.to_sym] = params[key.to_sym] unless params[key.to_sym].blank?
+        end
         search = ["nama LIKE ?", "%#{params[:nama]}%"]
 
         Candidate.includes(:province, :electoral_district, :party)
