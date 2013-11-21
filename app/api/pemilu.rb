@@ -46,22 +46,26 @@ module Pemilu
           .where(search)
           .find_each do |candidate|
             candidates << {
-              id: candidate.id,
+              id: candidate.calon_id,
               lembaga: candidate.lembaga,
               nama: candidate.nama,
               kelamin: candidate.kelamin,
-              tinggal: candidate.tinggal,
-              calon: candidate.calon_id,
+              domisili: candidate.domisili,
               provinsi: build_province(candidate),
               dapil: build_electoral_district(candidate),
-              partai: build_party(candidate)
+              partai: build_party(candidate),
+              urutan: candidate.urutan,
+              foto_url: candidate.foto_url
             }
         end
 
-        {results: [
-          count: candidates.count,
-          candidates: candidates
-        ]}
+        {
+          results: {
+            count: candidates.count,
+            total: candidates.count,
+            candidates: candidates
+          }
+        }
       end
 
       desc "Return a Candidate"
@@ -72,22 +76,24 @@ module Pemilu
         get do
           candidate = Candidate.find_by(calon_id: params[:id])
 
-          {results: [
-            count: 1,
-            candidates: [
-              {
-                id: candidate.id,
+          {
+            results: {
+              count: 1,
+              total: 1,
+              candidates: [{
+                id: candidate.calon_id,
                 lembaga: candidate.lembaga,
                 nama: candidate.nama,
                 kelamin: candidate.kelamin,
-                tinggal: candidate.tinggal,
-                calon: candidate.calon_id,
+                domisili: candidate.domisili,
                 provinsi: build_province(candidate),
                 dapil: build_electoral_district(candidate),
-                partai: build_party(candidate)
-              }
-            ]
-          ]}
+                partai: build_party(candidate),
+                urutan: candidate.urutan,
+                foto_url: candidate.foto_url
+              }]
+            }
+          }
         end
       end
     end

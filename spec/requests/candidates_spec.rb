@@ -12,41 +12,39 @@ describe Pemilu::API do
       get "/api/candidates"
       response.status.should == 200
       response.body.should == {
-        results: [
-          {
-            count: 2,
-            candidates: [
-              {
-                id: @dpd1.id,
-                lembaga: @dpd1.lembaga,
-                nama: @dpd1.nama,
-                kelamin: @dpd1.kelamin,
-                tinggal: @dpd1.tinggal,
-                calon: @dpd1.calon_id,
-                provinsi: {
-                  id: @aceh.id,
-                  nama: @aceh.nama
-                },
-                dapil: {},
-                partai: {}
-              },
-              {
-                id: @dpd2.id,
-                lembaga: @dpd2.lembaga,
-                nama: @dpd2.nama,
-                kelamin: @dpd2.kelamin,
-                tinggal: @dpd2.tinggal,
-                calon: @dpd2.calon_id,
-                provinsi: {
-                  id: @aceh.id,
-                  nama: @aceh.nama
-                },
-                dapil: {},
-                partai: {}
-              }
-            ]
-          }
-        ]
+        results: {
+          count: 2,
+          total: 2,
+          candidates: [{
+            id: @dpd1.calon_id,
+            lembaga: @dpd1.lembaga,
+            nama: @dpd1.nama,
+            kelamin: @dpd1.kelamin,
+            domisili: @dpd1.domisili,
+            provinsi: {
+              id: @aceh.id,
+              nama: @aceh.nama
+            },
+            dapil: {},
+            partai: {},
+            urutan: @dpd1.urutan,
+            foto_url: @dpd1.foto_url
+          }, {
+            id: @dpd2.calon_id,
+            lembaga: @dpd2.lembaga,
+            nama: @dpd2.nama,
+            kelamin: @dpd2.kelamin,
+            domisili: @dpd2.domisili,
+            provinsi: {
+              id: @aceh.id,
+              nama: @aceh.nama
+            },
+            dapil: {},
+            partai: {},
+            urutan: @dpd2.urutan,
+            foto_url: @dpd2.foto_url
+          }]
+        }
       }.to_json
     end
   end
@@ -56,27 +54,25 @@ describe Pemilu::API do
       get "/api/candidates/DPD1101"
       response.status.should == 200
       response.body.should == {
-        results: [
-          {
-            count: 1,
-            candidates: [
-              {
-                id: @dpd1.id,
-                lembaga: @dpd1.lembaga,
-                nama: @dpd1.nama,
-                kelamin: @dpd1.kelamin,
-                tinggal: @dpd1.tinggal,
-                calon: @dpd1.calon_id,
-                provinsi: {
-                  id: @aceh.id,
-                  nama: @aceh.nama
-                },
-                dapil: {},
-                partai: {}
-              }
-            ]
-          }
-        ]
+        results: {
+          count: 1,
+          total: 1,
+          candidates: [{
+            id: @dpd1.calon_id,
+            lembaga: @dpd1.lembaga,
+            nama: @dpd1.nama,
+            kelamin: @dpd1.kelamin,
+            domisili: @dpd1.domisili,
+            provinsi: {
+              id: @aceh.id,
+              nama: @aceh.nama
+            },
+            dapil: {},
+            partai: {},
+            urutan: @dpd1.urutan,
+            foto_url: @dpd1.foto_url
+          }]
+        }
       }.to_json
     end
   end

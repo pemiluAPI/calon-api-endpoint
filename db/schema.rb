@@ -11,21 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131113120953) do
+ActiveRecord::Schema.define(version: 20131121163858) do
 
   create_table "candidates", force: true do |t|
     t.string  "lembaga"
     t.integer "provinsi_id"
     t.integer "dapil_id"
     t.integer "partai_id"
-    t.integer "calon_urutan"
+    t.integer "urutan"
     t.string  "calon_id"
     t.string  "nama"
     t.string  "kelamin"
-    t.string  "tinggal"
+    t.string  "domisili"
     t.string  "agama"
     t.string  "tempat_lahir"
     t.string  "tanggal_lahir"
+    t.string  "foto_url"
   end
 
   create_table "electoral_districts", force: true do |t|

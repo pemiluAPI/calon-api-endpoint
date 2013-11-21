@@ -5,11 +5,12 @@ FactoryGirl.define do
     provinsi_id 11
     dapil_id nil
     partai_id nil
-    calon_urutan 1
+    urutan 1
     calon_id "DPD1101"
     nama "ADNAN N.S"
     kelamin "L"
-    tinggal "KOTA BANDA ACEH"
+    domisili "KOTA BANDA ACEH"
+    foto_url "http://dct.kpu.go.id/images/foto/DPD/11.%20NAD/01.jpg"
   end
 
   factory :dpd2, class: Candidate do
@@ -18,10 +19,11 @@ FactoryGirl.define do
     provinsi_id 11
     dapil_id nil
     partai_id nil
-    calon_urutan 2
+    urutan 2
     calon_id "DPD1102"
     nama "Dr. AHMAD FARHAN HAMID, M.S."
     kelamin "L"
-    tinggal "KOTA BANDA ACEH"
+    domisili "KOTA BANDA ACEH"
+    foto_url "http://dct.kpu.go.id/images/foto/DPD/11.%20NAD/03.jpg"
   end
 end
