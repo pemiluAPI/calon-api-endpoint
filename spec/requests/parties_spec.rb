@@ -6,9 +6,9 @@ describe Pemilu::API do
     @pan = create(:pan)
   end
 
-  describe "GET /parties" do
+  describe "GET /api/parties" do
     it "returns an array of parties" do
-      get "/parties"
+      get "/api/parties"
       response.status.should == 200
       response.body.should == {
         results: [
@@ -32,9 +32,9 @@ describe Pemilu::API do
     end
   end
 
-  describe "GET /parties/2" do
+  describe "GET /api/parties/2" do
     it "returns a party" do
-      get "/parties/2"
+      get "/api/parties/2"
       response.status.should == 200
       response.body.should == {
         results: [

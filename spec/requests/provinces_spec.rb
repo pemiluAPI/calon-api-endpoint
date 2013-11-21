@@ -9,9 +9,9 @@ describe Pemilu::API do
     @dapil_jambi = create(:dapil_jambi)
   end
 
-  describe "GET /provinces" do
+  describe "GET /api/provinces" do
     it "returns an array of provinces" do
-      get "/provinces"
+      get "/api/provinces"
       response.status.should == 200
       response.body.should == {
         results: [

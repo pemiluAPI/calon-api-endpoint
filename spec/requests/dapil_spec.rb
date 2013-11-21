@@ -9,9 +9,9 @@ describe Pemilu::API do
     @dapil_jambi = create(:dapil_jambi)
   end
 
-  describe "GET /dapil" do
+  describe "GET /api/dapil" do
     it "returns an array of electoral districts" do
-      get "/dapil"
+      get "/api/dapil"
       response.status.should == 200
       response.body.should == {
         results: [

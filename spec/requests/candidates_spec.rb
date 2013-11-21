@@ -7,9 +7,9 @@ describe Pemilu::API do
     @aceh = create(:aceh)
   end
 
-  describe "GET /candidates" do
+  describe "GET /api/candidates" do
     it "returns an array of candidates" do
-      get "/candidates"
+      get "/api/candidates"
       response.status.should == 200
       response.body.should == {
         results: [
@@ -51,9 +51,9 @@ describe Pemilu::API do
     end
   end
 
-  describe "GET /candidates/DPD1101" do
+  describe "GET /api/candidates/DPD1101" do
     it "returns an array of candidates" do
-      get "/candidates/DPD1101"
+      get "/api/candidates/DPD1101"
       response.status.should == 200
       response.body.should == {
         results: [
