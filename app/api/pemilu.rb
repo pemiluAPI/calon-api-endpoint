@@ -39,12 +39,15 @@ module Pemilu
         conditions[:kelamin] = params[:kelamin] unless params[:kelamin].nil?
         conditions[:dapil_id] = params[:dapil] unless params[:dapil].nil?
         conditions[:partai_id] = params[:partai] unless params[:partai].nil?
+        conditions[:provinsi_id] = params[:provinsi] unless params[:provinsi].nil?
         search = ["nama LIKE ?", "%#{params[:nama]}%"]
 
         Candidate.includes(:province, :electoral_district, :party)
           .where(conditions)
           .where(search)
-          .find_each do |candidate|
+          .limit(params[:limit])
+          .offset(params[:offset])
+          .each do |candidate|
             candidates << {
               id: candidate.calon_id,
               lembaga: candidate.lembaga,
@@ -62,7 +65,7 @@ module Pemilu
         {
           results: {
             count: candidates.count,
-            total: candidates.count,
+            total: Candidate.count,
             candidates: candidates
           }
         }
