@@ -139,10 +139,12 @@ module Pemilu
           }
         end
 
-        {results: [
-          count: electoral_districts.count,
-          dapil: electoral_districts
-        ]}
+        {
+          results: {
+            count: electoral_districts.count,
+            dapil: electoral_districts
+          }
+        }
       end
     end
 
