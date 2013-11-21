@@ -24,86 +24,84 @@ Candidates related resources of the **Candidates API**
 + Response 200 (application/json)
 
         {
-            "results": [
-                {
-                    "count": 4,
-                    "total": 4,
-                    "candidates": [
-                        {
-                            "id": "DPD1101",
-                            "lembaga": "DPD",
-                            "nama": "MUHAMMAD AFZAL MAHFUZ, S.H.",
-                            "kelamin": "L",
-                            "domisili": "KOTA BANDA ACEH",
-                            "provinsi": {
-                                "id": "11",
-                                "nama": "ACEH"
-                            },
-                            "dapil": {},
-                            "partai": {},
-                            "urutan": "1",
-                            "foto_url": "http://dct.kpu.go.id/images/foto/DPD/11.%20NAD/01.jpg"
+            "results": {
+                "count": 4,
+                "total": 4,
+                "candidates": [
+                    {
+                        "id": "DPD1101",
+                        "lembaga": "DPD",
+                        "nama": "MUHAMMAD AFZAL MAHFUZ, S.H.",
+                        "kelamin": "L",
+                        "domisili": "KOTA BANDA ACEH",
+                        "provinsi": {
+                            "id": "11",
+                            "nama": "ACEH"
                         },
-                        {
-                            "id": "DPD1103",
-                            "lembaga": "DPD",
-                            "nama": "Drs. H. ANHARUDDIN, S.E., M.M.",
-                            "kelamin": "L",
-                            "domisili": "KOTA SUBULUSSALAM",
-                            "provinsi": {
-                                "id": "11",
-                                "nama": "ACEH"
-                            },
-                            "dapil": {},
-                            "partai": {},
-                            "urutan": "3",
-                            "foto_url": "http://dct.kpu.go.id/images/foto/DPD/11.%20NAD/03.jpg"
+                        "dapil": {},
+                        "partai": {},
+                        "urutan": "1",
+                        "foto_url": "http://dct.kpu.go.id/images/foto/DPD/11.%20NAD/01.jpg"
+                    },
+                    {
+                        "id": "DPD1103",
+                        "lembaga": "DPD",
+                        "nama": "Drs. H. ANHARUDDIN, S.E., M.M.",
+                        "kelamin": "L",
+                        "domisili": "KOTA SUBULUSSALAM",
+                        "provinsi": {
+                            "id": "11",
+                            "nama": "ACEH"
                         },
-                        {
-                            "id": "DPR11010101",
-                            "lembaga": "DPR",
-                            "nama": "Prof. Dr. BACHTIAR ALY, MA",
-                            "kelamin": "L",
-                            "domisili": "KOTA TANGERANG SELATAN",
-                            "provinsi": {
-                                "id": "11",
-                                "nama": "ACEH"
-                            },
-                            "dapil": {
-                                "id": "1101",
-                                "nama": "ACEH I"
-                            },
-                            "partai": {
-                                "id": "1",
-                                "nama": "Partai NasDem"
-                            },
-                            "urutan": "1",
-                            "foto_url": "http://dct.kpu.go.id/images/foto/DPR/1101.%20ACEH%20I/01.%20NASDEM/01.%20PROF.%20DR.%20BACHTIAR%20ALY%2C%20MA.jpg"
+                        "dapil": {},
+                        "partai": {},
+                        "urutan": "3",
+                        "foto_url": "http://dct.kpu.go.id/images/foto/DPD/11.%20NAD/03.jpg"
+                    },
+                    {
+                        "id": "DPR11010101",
+                        "lembaga": "DPR",
+                        "nama": "Prof. Dr. BACHTIAR ALY, MA",
+                        "kelamin": "L",
+                        "domisili": "KOTA TANGERANG SELATAN",
+                        "provinsi": {
+                            "id": "11",
+                            "nama": "ACEH"
                         },
-                        {
-                            "id": "DPR11010102",
-                            "lembaga": "DPR",
-                            "nama": "Drs. H. T PRIBADI",
-                            "kelamin": "L",
-                            "domisili": "KOTA BANDA ACEH",
-                            "provinsi": {
-                                "id": "11",
-                                "nama": "ACEH"
-                            },
-                            "dapil": {
-                                "id": "1101",
-                                "nama": "ACEH I"
-                            },
-                            "partai": {
-                                "id": "1",
-                                "nama": "Partai NasDem"
-                            },
-                            "urutan": "2",
-                            "foto_url": "http://dct.kpu.go.id/images/foto/DPR/1101.%20ACEH%20I/01.%20NASDEM/02.%20DRS.%20H.T.%20PRIBADI.JPG"
-                        }
-                    ]
-                }
-            ]
+                        "dapil": {
+                            "id": "1101",
+                            "nama": "ACEH I"
+                        },
+                        "partai": {
+                            "id": "1",
+                            "nama": "Partai NasDem"
+                        },
+                        "urutan": "1",
+                        "foto_url": "http://dct.kpu.go.id/images/foto/DPR/1101.%20ACEH%20I/01.%20NASDEM/01.%20PROF.%20DR.%20BACHTIAR%20ALY%2C%20MA.jpg"
+                    },
+                    {
+                        "id": "DPR11010102",
+                        "lembaga": "DPR",
+                        "nama": "Drs. H. T PRIBADI",
+                        "kelamin": "L",
+                        "domisili": "KOTA BANDA ACEH",
+                        "provinsi": {
+                            "id": "11",
+                            "nama": "ACEH"
+                        },
+                        "dapil": {
+                            "id": "1101",
+                            "nama": "ACEH I"
+                        },
+                        "partai": {
+                            "id": "1",
+                            "nama": "Partai NasDem"
+                        },
+                        "urutan": "2",
+                        "foto_url": "http://dct.kpu.go.id/images/foto/DPR/1101.%20ACEH%20I/01.%20NASDEM/02.%20DRS.%20H.T.%20PRIBADI.JPG"
+                    }
+                ]
+            }
         }
 
 ## Candidates [/candidates/{id}?apiKey={apiKey}]
@@ -123,29 +121,27 @@ A single Candidates object with all its details
     + Body
 
             {
-                "results": [
-                    {
-                        "count": 1,
-                        "total": 1,
-                        "candidates": [
-                            {
-                                "id": "DPD1105",
-                                "lembaga": "DPD",
-                                "nama": "H. ASY'ARI, S.Pd.I.",
-                                "kelamin": "L",
-                                "domisili": "KOTA LANGSA",
-                                "provinsi": {
-                                    "id": "11",
-                                    "nama": "ACEH"
-                                },
-                                "dapil": {},
-                                "partai": {},
-                                "urutan": "5",
-                                "foto_url": "http://dct.kpu.go.id/images/foto/DPD/11.%20NAD/05.jpg"
-                            }
-                        ]
-                    }
-                ]
+                "results": {
+                    "count": 1,
+                    "total": 1,
+                    "candidates": [
+                        {
+                            "id": "DPD1105",
+                            "lembaga": "DPD",
+                            "nama": "H. ASY'ARI, S.Pd.I.",
+                            "kelamin": "L",
+                            "domisili": "KOTA LANGSA",
+                            "provinsi": {
+                                "id": "11",
+                                "nama": "ACEH"
+                            },
+                            "dapil": {},
+                            "partai": {},
+                            "urutan": "5",
+                            "foto_url": "http://dct.kpu.go.id/images/foto/DPD/11.%20NAD/05.jpg"
+                        }
+                    ]
+                }
             }
 
 
@@ -161,31 +157,29 @@ Parties related resources of the **Candidates API**
 + Response 200 (application/json)
 
         {
-            "results": [
-                {
-                    "count": 3,
-                    "parties": [
-                        {
-                            "id": "1",
-                            "nama": "Partai NasDem",
-                            "singkatan": "Partai NasDem",
-                            "situs": "http://www.partainasdem.org/"
-                        },
-                        {
-                            "id": "2",
-                            "nama": "Partai Kebangkitan Bangsa",
-                            "singkatan": "PKB",
-                            "situs": "http://www.dpp.pkb.or.id/"
-                        },
-                        {
-                            "id": "3",
-                            "nama": "Partai Keadilan Sejahtera",
-                            "singkatan": "PKS",
-                            "situs": "http://www.pks.or.id/"
-                        }
-                    ]
-                }
-            ]
+            "results": {
+                "count": 3,
+                "parties": [
+                    {
+                        "id": "1",
+                        "nama": "Partai NasDem",
+                        "singkatan": "Partai NasDem",
+                        "situs": "http://www.partainasdem.org/"
+                    },
+                    {
+                        "id": "2",
+                        "nama": "Partai Kebangkitan Bangsa",
+                        "singkatan": "PKB",
+                        "situs": "http://www.dpp.pkb.or.id/"
+                    },
+                    {
+                        "id": "3",
+                        "nama": "Partai Keadilan Sejahtera",
+                        "singkatan": "PKS",
+                        "situs": "http://www.pks.or.id/"
+                    }
+                ]
+            }
         }
 
 ## Parties [/parties/{id}?apiKey={apiKey}]
@@ -205,19 +199,17 @@ A single Parties object with all its details
     + Body
 
             {
-                "results": [
-                    {
-                        "count": 1,
-                        "parties": [
-                            {
-                                "id": "3",
-                                "nama": "Partai Keadilan Sejahtera",
-                                "singkatan": "PKS",
-                                "situs": "http://www.pks.or.id/"
-                            }
-                        ]
-                    }
-                ]
+                "results": {
+                    "count": 1,
+                    "parties": [
+                        {
+                            "id": "3",
+                            "nama": "Partai Keadilan Sejahtera",
+                            "singkatan": "PKS",
+                            "situs": "http://www.pks.or.id/"
+                        }
+                    ]
+                }
             }
 
 
@@ -233,50 +225,48 @@ Provinces related resources of the **Candidates API**
 + Response 200 (application/json)
 
         {
-            "results": [
-                {
-                    "count": 2,
-                    "provinsi": [
-                        {
-                            "id": "11",
-                            "nama": "ACEH",
-                            "dapil": [
-                                {
-                                    "id": "1101",
-                                    "nama": "ACEH I",
-                                    "provinsi": "ACEH"
-                                },
-                                {
-                                    "id": "1102",
-                                    "nama": "ACEH II",
-                                    "provinsi": "ACEH"
-                                }
-                            ]
-                        },
-                        {
-                            "id": "12",
-                            "nama": "SUMATERA UTARA",
-                            "dapil": [
-                                {
-                                    "id": "1201",
-                                    "nama": "SUMATERA UTARA I",
-                                    "provinsi": "SUMATERA UTARA"
-                                },
-                                {
-                                    "id": "1202",
-                                    "nama": "SUMATERA UTARA II",
-                                    "provinsi": "SUMATERA UTARA"
-                                },
-                                {
-                                    "id": "1203",
-                                    "nama": "SUMATERA UTARA III",
-                                    "provinsi": "SUMATERA UTARA"
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ]
+            "results": {
+                "count": 2,
+                "provinsi": [
+                    {
+                        "id": "11",
+                        "nama": "ACEH",
+                        "dapil": [
+                            {
+                                "id": "1101",
+                                "nama": "ACEH I",
+                                "provinsi": "ACEH"
+                            },
+                            {
+                                "id": "1102",
+                                "nama": "ACEH II",
+                                "provinsi": "ACEH"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "12",
+                        "nama": "SUMATERA UTARA",
+                        "dapil": [
+                            {
+                                "id": "1201",
+                                "nama": "SUMATERA UTARA I",
+                                "provinsi": "SUMATERA UTARA"
+                            },
+                            {
+                                "id": "1202",
+                                "nama": "SUMATERA UTARA II",
+                                "provinsi": "SUMATERA UTARA"
+                            },
+                            {
+                                "id": "1203",
+                                "nama": "SUMATERA UTARA III",
+                                "provinsi": "SUMATERA UTARA"
+                            }
+                        ]
+                    }
+                ]
+            }
         }
 
 
@@ -292,52 +282,50 @@ Electoral Districts related resources of the **Candidates API**
 + Response 200 (application/json)
 
         {
-            "results": [
-                {
-                    "count": 5,
-                    "dapil": [
-                        {
-                            "id": "1101",
-                            "nama": "ACEH I",
-                            "provinsi": {
-                                "id": "11",
-                                "nama": "ACEH"
-                            }
-                        },
-                        {
-                            "id": "1102",
-                            "nama": "ACEH II",
-                            "provinsi": {
-                                "id": "11",
-                                "nama": "ACEH"
-                            }
-                        },
-                        {
-                            "id": "1201",
-                            "nama": "SUMATERA UTARA I",
-                            "provinsi": {
-                                "id": "12",
-                                "nama": "SUMATERA UTARA"
-                            }
-                        },
-                        {
-                            "id": "1202",
-                            "nama": "SUMATERA UTARA II",
-                            "provinsi": {
-                                "id": "12",
-                                "nama": "SUMATERA UTARA"
-                            }
-                        },
-                        {
-                            "id": "1203",
-                            "nama": "SUMATERA UTARA III",
-                            "provinsi": {
-                                "id": "12",
-                                "nama": "SUMATERA UTARA"
-                            }
+            "results": {
+                "count": 5,
+                "dapil": [
+                    {
+                        "id": "1101",
+                        "nama": "ACEH I",
+                        "provinsi": {
+                            "id": "11",
+                            "nama": "ACEH"
                         }
-                    ]
-                }
-            ]
+                    },
+                    {
+                        "id": "1102",
+                        "nama": "ACEH II",
+                        "provinsi": {
+                            "id": "11",
+                            "nama": "ACEH"
+                        }
+                    },
+                    {
+                        "id": "1201",
+                        "nama": "SUMATERA UTARA I",
+                        "provinsi": {
+                            "id": "12",
+                            "nama": "SUMATERA UTARA"
+                        }
+                    },
+                    {
+                        "id": "1202",
+                        "nama": "SUMATERA UTARA II",
+                        "provinsi": {
+                            "id": "12",
+                            "nama": "SUMATERA UTARA"
+                        }
+                    },
+                    {
+                        "id": "1203",
+                        "nama": "SUMATERA UTARA III",
+                        "provinsi": {
+                            "id": "12",
+                            "nama": "SUMATERA UTARA"
+                        }
+                    }
+                ]
+            }
         }
 
