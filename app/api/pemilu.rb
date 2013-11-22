@@ -70,7 +70,7 @@ module Pemilu
         {
           results: {
             count: candidates.count,
-            total: Candidate.count,
+            total: Candidate.where(conditions).where(search).count,
             candidates: candidates
           }
         }
