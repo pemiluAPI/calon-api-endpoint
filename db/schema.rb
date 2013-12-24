@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20131224094904) do
     t.integer "tahun"
   end
 
-  add_index "candidates", ["calon_id"], name: "index_candidates_on_calon_id", unique: true, using: :btree
+  add_index "candidates", ["calon_id"], name: "index_candidates_on_calon_id", unique: true
 
   create_table "electoral_districts", force: true do |t|
     t.string  "nama"
