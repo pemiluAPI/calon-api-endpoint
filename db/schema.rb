@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131121163858) do
+ActiveRecord::Schema.define(version: 20131224094904) do
 
   create_table "candidates", force: true do |t|
     t.string  "lembaga"
@@ -21,13 +21,16 @@ ActiveRecord::Schema.define(version: 20131121163858) do
     t.integer "urutan"
     t.string  "calon_id"
     t.string  "nama"
-    t.string  "kelamin"
+    t.string  "jenis_kelamin"
     t.string  "domisili"
     t.string  "agama"
     t.string  "tempat_lahir"
     t.string  "tanggal_lahir"
     t.string  "foto_url"
+    t.integer "tahun"
   end
+
+  add_index "candidates", ["calon_id"], name: "index_candidates_on_calon_id", unique: true, using: :btree
 
   create_table "electoral_districts", force: true do |t|
     t.string  "nama"
