@@ -18,6 +18,7 @@ Candidates related resources of the **Candidates API**
     + provinsi (optional, string, `11`) ... String id of the `provinsi` (province) that the candidate is running in.
     + kelamin (optional, string, `L`) ... String `kelamin` (gender) of the candidate.
     + lembaga (optional, string, `DPD`) ... String `lembaga` (legislative body) that the candidate is running for.
+    + tahun (optional, number, `2014`) ... Number `tahun` (election year) that the candidate is running for.
     + apiKey (required, string, `06ec082d057daa3d310b27483cc3962e`) ... String `apiKey` of the application.
 
 ### List Candidates [GET]

@@ -39,12 +39,17 @@ module Pemilu
           kelamin: 'kelamin',
           dapil: 'dapil_id',
           partai: 'partai_id',
-          provinsi: 'provinsi_id'
+          provinsi: 'provinsi_id',
+          tahun: 'tahun'
         }
         conditions = Hash.new
         valid_params.each_pair do |key, value|
           conditions[value.to_sym] = params[key.to_sym] unless params[key.to_sym].blank?
         end
+
+        # Set default year
+        conditions[:tahun] = params[:tahun] || 2014
+
         search = ["nama LIKE ?", "%#{params[:nama]}%"]
 
         Candidate.includes(:province, :electoral_district, :party)

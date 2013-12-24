@@ -19,7 +19,7 @@ describe Pemilu::API do
             id: @dpd1.calon_id,
             lembaga: @dpd1.lembaga,
             nama: @dpd1.nama,
-            kelamin: @dpd1.kelamin,
+            jenis_kelamin: @dpd1.jenis_kelamin,
             domisili: @dpd1.domisili,
             provinsi: {
               id: @aceh.id,
@@ -33,7 +33,7 @@ describe Pemilu::API do
             id: @dpd2.calon_id,
             lembaga: @dpd2.lembaga,
             nama: @dpd2.nama,
-            kelamin: @dpd2.kelamin,
+            jenis_kelamin: @dpd2.jenis_kelamin,
             domisili: @dpd2.domisili,
             provinsi: {
               id: @aceh.id,
@@ -61,7 +61,7 @@ describe Pemilu::API do
             id: @dpd1.calon_id,
             lembaga: @dpd1.lembaga,
             nama: @dpd1.nama,
-            kelamin: @dpd1.kelamin,
+            jenis_kelamin: @dpd1.jenis_kelamin,
             domisili: @dpd1.domisili,
             provinsi: {
               id: @aceh.id,
