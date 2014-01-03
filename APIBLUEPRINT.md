@@ -7,7 +7,7 @@ The Candidate API is a service that provides information about candidates runnin
 # Group Candidates
 Candidates related resources of the **Candidates API**
 
-## Candidates Collection [/candidates?apiKey={apiKey}&lembaga={lembaga}&kelamin={kelamin}&provinsi={provinsi}&dapil={dapil}&partai={partai}&nama={nama}&limit={limit}&offset={offset}]
+## Candidates Collection [/candidates?apiKey={apiKey}&lembaga={lembaga}&jenis_kelamin={jenis_kelamin}&provinsi={provinsi}&dapil={dapil}&partai={partai}&nama={nama}&limit={limit}&offset={offset}]
 
 + Parameters
     + offset (optional, number, `300`) ... Number the offset from the beginning of the list of records to return (use in combination with `limit` to support pagination)
@@ -16,7 +16,7 @@ Candidates related resources of the **Candidates API**
     + partai (optional, string, `1`) ... String id of the `partai` (party) that the candidate is a member of
     + dapil (optional, string, `1101`) ... String id of the `dapil` (electoral district) that the candidate is running in.
     + provinsi (optional, string, `11`) ... String id of the `provinsi` (province) that the candidate is running in.
-    + kelamin (optional, string, `L`) ... String `kelamin` (gender) of the candidate.
+    + jenis_kelamin (optional, string, `L`) ... String `jenis_kelamin` (gender) of the candidate.
     + lembaga (optional, string, `DPD`) ... String `lembaga` (legislative body) that the candidate is running for.
     + tahun (optional, number, `2014`) ... Number `tahun` (election year) that the candidate is running for.
     + apiKey (required, string, `06ec082d057daa3d310b27483cc3962e`) ... String `apiKey` of the application.
@@ -33,7 +33,7 @@ Candidates related resources of the **Candidates API**
                         "id": "DPD1101",
                         "lembaga": "DPD",
                         "nama": "MUHAMMAD AFZAL MAHFUZ, S.H.",
-                        "kelamin": "L",
+                        "jenis_kelamin": "L",
                         "domisili": "KOTA BANDA ACEH",
                         "provinsi": {
                             "id": "11",
@@ -48,7 +48,7 @@ Candidates related resources of the **Candidates API**
                         "id": "DPD1103",
                         "lembaga": "DPD",
                         "nama": "Drs. H. ANHARUDDIN, S.E., M.M.",
-                        "kelamin": "L",
+                        "jenis_kelamin": "L",
                         "domisili": "KOTA SUBULUSSALAM",
                         "provinsi": {
                             "id": "11",
@@ -63,7 +63,7 @@ Candidates related resources of the **Candidates API**
                         "id": "DPR11010101",
                         "lembaga": "DPR",
                         "nama": "Prof. Dr. BACHTIAR ALY, MA",
-                        "kelamin": "L",
+                        "jenis_kelamin": "L",
                         "domisili": "KOTA TANGERANG SELATAN",
                         "provinsi": {
                             "id": "11",
@@ -84,7 +84,7 @@ Candidates related resources of the **Candidates API**
                         "id": "DPR11010102",
                         "lembaga": "DPR",
                         "nama": "Drs. H. T PRIBADI",
-                        "kelamin": "L",
+                        "jenis_kelamin": "L",
                         "domisili": "KOTA BANDA ACEH",
                         "provinsi": {
                             "id": "11",
@@ -130,7 +130,7 @@ A single Candidates object with all its details
                             "id": "DPD1105",
                             "lembaga": "DPD",
                             "nama": "H. ASY'ARI, S.Pd.I.",
-                            "kelamin": "L",
+                            "jenis_kelamin": "L",
                             "domisili": "KOTA LANGSA",
                             "provinsi": {
                                 "id": "11",
