@@ -7,7 +7,7 @@ The Candidate API is a service that provides information about candidates runnin
 # Group Candidates
 Candidates related resources of the **Candidates API**
 
-## Candidates Collection [/candidates?apiKey={apiKey}&lembaga={lembaga}&jenis_kelamin={jenis_kelamin}&provinsi={provinsi}&dapil={dapil}&partai={partai}&nama={nama}&limit={limit}&offset={offset}]
+## Candidates Collection [/candidates?apiKey={apiKey}&tahun={tahun}&lembaga={lembaga}&jenis_kelamin={jenis_kelamin}&provinsi={provinsi}&dapil={dapil}&partai={partai}&nama={nama}&limit={limit}&offset={offset}]
 
 + Parameters
     + offset (optional, number, `300`) ... Number the offset from the beginning of the list of records to return (use in combination with `limit` to support pagination)
