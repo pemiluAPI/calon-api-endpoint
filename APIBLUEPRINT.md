@@ -131,7 +131,7 @@ Candidates related resources of the **Candidates API**
             }
         }
 
-## Candidates [/candidates/{id}?apiKey={apiKey}]
+## Candidates [/caleg/{id}?apiKey={apiKey}]
 A single Candidates object with all its details
 
 + Parameters
