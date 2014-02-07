@@ -26,7 +26,7 @@ module Pemilu
     prefix 'api'
     format :json
 
-    resource :candidates do
+    resource :caleg do
       helpers CandidateHelpers
 
       desc "Return all Candidates"
@@ -37,9 +37,9 @@ module Pemilu
         valid_params = {
           lembaga: 'lembaga',
           kelamin: 'kelamin',
-          dapil: 'dapil_id',
-          partai: 'partai_id',
-          provinsi: 'provinsi_id',
+          dapil: 'id_dapil',
+          partai: 'id_partai',
+          provinsi: 'id_provinsi',
           tahun: 'tahun'
         }
         conditions = Hash.new
@@ -59,11 +59,11 @@ module Pemilu
           .offset(params[:offset])
           .each do |candidate|
             candidates << {
-              id: candidate.calon_id,
+              id: candidate.id,
               lembaga: candidate.lembaga,
               nama: candidate.nama,
               jenis_kelamin: candidate.jenis_kelamin,
-              domisili: candidate.domisili,
+              kab_kota_tinggal: candidate.kab_kota_tinggal,
               provinsi: build_province(candidate),
               dapil: build_electoral_district(candidate),
               partai: build_party(candidate),
@@ -76,7 +76,7 @@ module Pemilu
           results: {
             count: candidates.count,
             total: Candidate.where(conditions).where(search).count,
-            candidates: candidates
+            caleg: candidates
           }
         }
       end
@@ -87,18 +87,18 @@ module Pemilu
       end
       route_param :id do
         get do
-          candidate = Candidate.find_by(calon_id: params[:id])
+          candidate = Candidate.find_by(id: params[:id])
 
           {
             results: {
               count: 1,
               total: 1,
-              candidates: [{
-                id: candidate.calon_id,
+              caleg: [{
+                id: candidate.id,
                 lembaga: candidate.lembaga,
                 nama: candidate.nama,
                 jenis_kelamin: candidate.jenis_kelamin,
-                domisili: candidate.domisili,
+                kab_kota_tinggal: candidate.kab_kota_tinggal,
                 provinsi: build_province(candidate),
                 dapil: build_electoral_district(candidate),
                 partai: build_party(candidate),
@@ -130,13 +130,33 @@ module Pemilu
           }
         }
       end
+      desc "Return a Province"
+      params do
+        requires :id, type: Integer, desc: "Province ID."
+      end
+      route_param :id do
+        get do
+            province = Province.find_by(id: params[:id])            
+          {
+            results: {
+              count: 1,
+              total: 1,
+              provinces: [{
+                id: province.id,                
+                nama: province.nama,                
+                dapil: province.electoral_districts.select("id, nama")
+              }]
+            }
+          }
+        end
+      end
     end
 
     resource :dapil do
       desc "Return all Electoral Districts"
       get do
         electoral_districts = Array.new
-        ElectoralDistrict.includes(:province).select("id, nama, provinsi_id").find_each do |electoral_district|
+        ElectoralDistrict.includes(:province).select("id, nama, id_provinsi").find_each do |electoral_district|
           electoral_districts << {
             id: electoral_district.id,
             nama: electoral_district.nama,
@@ -151,6 +171,26 @@ module Pemilu
           }
         }
       end
+      desc "Return a Electoral District"
+      params do
+        requires :id, type: String, desc: "Dapil Id."
+      end
+      route_param :id do
+        get do
+            dapil = ElectoralDistrict.includes(:province).find_by(id: params[:id])
+          {
+            results: {
+              count: 1,
+              total: 1,
+              electoral_districts: [{
+                id: dapil.id,                
+                nama: dapil.nama,                
+                provinsi: dapil.province
+              }]
+            }
+          }
+        end
+      end
     end
 
     resource :parties do
@@ -159,7 +199,7 @@ module Pemilu
         {
           results: {
             count: Party.count,
-            parties: Party.select("id, nama, singkatan, situs")
+            parties: Party.select("id, nama, nama_lengkap, url_situs")
           }
         }
       end
@@ -170,7 +210,7 @@ module Pemilu
       end
       route_param :id do
         get do
-          party = Party.select("id, nama, singkatan, situs").where(id: params[:id])
+          party = Party.select("id, nama, nama_lengkap, url_situs").where(id: params[:id])
 
           {
             results: {
