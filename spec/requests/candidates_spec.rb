@@ -7,20 +7,20 @@ describe Pemilu::API do
     @aceh = create(:aceh)
   end
 
-  describe "GET /api/candidates" do
-    it "returns an array of candidates" do
-      get "/api/candidates"
+  describe "GET /api/caleg" do
+    it "returns an array of caleg" do
+      get "/api/caleg"
       response.status.should == 200
       response.body.should == {
         results: {
           count: 2,
           total: 2,
-          candidates: [{
-            id: @dpd1.calon_id,
+          caleg: [{
+            id: @dpd1.id,
             lembaga: @dpd1.lembaga,
             nama: @dpd1.nama,
             jenis_kelamin: @dpd1.jenis_kelamin,
-            domisili: @dpd1.domisili,
+            kab_kota_tinggal: @dpd1.kab_kota_tinggal,
             provinsi: {
               id: @aceh.id,
               nama: @aceh.nama
@@ -30,11 +30,11 @@ describe Pemilu::API do
             urutan: @dpd1.urutan,
             foto_url: @dpd1.foto_url
           }, {
-            id: @dpd2.calon_id,
+            id: @dpd2.id,
             lembaga: @dpd2.lembaga,
             nama: @dpd2.nama,
             jenis_kelamin: @dpd2.jenis_kelamin,
-            domisili: @dpd2.domisili,
+            kab_kota_tinggal: @dpd1.kab_kota_tinggal,
             provinsi: {
               id: @aceh.id,
               nama: @aceh.nama
@@ -49,20 +49,20 @@ describe Pemilu::API do
     end
   end
 
-  describe "GET /api/candidates/DPD1101" do
-    it "returns an array of candidates" do
-      get "/api/candidates/DPD1101"
+  describe "GET /api/caleg/1100-00-0000-0001" do
+    it "returns an array of caleg" do
+      get "/api/caleg/1100-00-0000-0001"
       response.status.should == 200
       response.body.should == {
         results: {
           count: 1,
           total: 1,
-          candidates: [{
-            id: @dpd1.calon_id,
+          caleg: [{
+            id: @dpd1.id,
             lembaga: @dpd1.lembaga,
             nama: @dpd1.nama,
             jenis_kelamin: @dpd1.jenis_kelamin,
-            domisili: @dpd1.domisili,
+            kab_kota_tinggal: @dpd1.kab_kota_tinggal,
             provinsi: {
               id: @aceh.id,
               nama: @aceh.nama

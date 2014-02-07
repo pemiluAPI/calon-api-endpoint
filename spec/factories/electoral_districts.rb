@@ -1,19 +1,19 @@
 FactoryGirl.define do
   factory :dapil_aceh1, class: ElectoralDistrict do
-    id 1101
+    id "1101-00-0000"
     nama "Aceh I"
-    provinsi_id 11
+    id_provinsi 11
   end
 
   factory :dapil_aceh2, class: ElectoralDistrict do
-    id 1102
+    id "1102-00-0000"
     nama "Aceh II"
-    provinsi_id 11
+    id_provinsi 11
   end
 
   factory :dapil_jambi, class: ElectoralDistrict do
-    id 1501
+    id "1501-00-0000"
     nama "Jambi"
-    provinsi_id 15
+    id_provinsi 15
   end
 end

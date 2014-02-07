@@ -141,7 +141,7 @@ module Pemilu
             results: {
               count: 1,
               total: 1,
-              provinces: [{
+              provinsi: [{
                 id: province.id,                
                 nama: province.nama,                
                 dapil: province.electoral_districts.select("id, nama")
@@ -182,7 +182,7 @@ module Pemilu
             results: {
               count: 1,
               total: 1,
-              electoral_districts: [{
+              dapil: [{
                 id: dapil.id,                
                 nama: dapil.nama,                
                 provinsi: dapil.province
