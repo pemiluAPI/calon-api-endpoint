@@ -46,4 +46,31 @@ describe Pemilu::API do
       }.to_json
     end
   end
+  describe "GET /api/provinces/11" do
+    it "returns a province" do
+      get "/api/provinces/11"
+      response.status.should == 200
+      response.body.should == {
+        results: {
+          count: 1,
+          total:1,
+          provinsi: [
+            {
+              id: @aceh.id,
+              nama: @aceh.nama,
+              dapil: [
+                {
+                  id: @dapil_aceh1.id,
+                  nama: @dapil_aceh1.nama
+                },
+                {
+                  id: @dapil_aceh2.id,
+                  nama: @dapil_aceh2.nama
+                }
+              ]
+            }]
+        }
+      }.to_json
+    end
+  end
 end

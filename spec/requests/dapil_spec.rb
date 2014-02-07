@@ -46,4 +46,25 @@ describe Pemilu::API do
       }.to_json
     end
   end
+  describe "GET /api/dapil/1101-00-0000" do
+    it "returns a dapil" do
+      get "/api/dapil/1101-00-0000"
+      response.status.should == 200
+      response.body.should == {
+        results: {
+          count: 1,
+          total: 1,
+          dapil: [
+            {
+              id: @dapil_aceh1.id,
+              nama: @dapil_aceh1.nama,
+              provinsi: {
+                id: @aceh.id,
+                nama: @aceh.nama
+              }
+            }]
+        }
+      }.to_json
+    end
+  end
 end
