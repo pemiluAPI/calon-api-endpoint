@@ -13,7 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20140210040211) do
 
-  create_table "candidates", force: true do |t|
+
+  create_table "candidates", id: false, force: true do |t|
+    t.string  "id"
     t.string  "lembaga"
     t.integer "id_provinsi"
     t.integer "id_dapil"
@@ -44,7 +46,8 @@ ActiveRecord::Schema.define(version: 20140210040211) do
     t.integer "jumlah_penduduk"
   end
 
-  create_table "parties", force: true do |t|
+  create_table "parties", id: false, force: true do |t|
+    t.string "id"
     t.string "nama"
     t.string "nama_lengkap"
     t.string "url_situs"
