@@ -11,47 +11,68 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131224094904) do
+ActiveRecord::Schema.define(version: 20140210040211) do
 
   create_table "candidates", force: true do |t|
     t.string  "lembaga"
-    t.integer "provinsi_id"
-    t.integer "dapil_id"
-    t.integer "partai_id"
+    t.integer "id_provinsi"
+    t.integer "id_dapil"
+    t.integer "id_partai"
     t.integer "urutan"
-    t.string  "calon_id"
     t.string  "nama"
     t.string  "jenis_kelamin"
-    t.string  "domisili"
     t.string  "agama"
     t.string  "tempat_lahir"
     t.string  "tanggal_lahir"
     t.string  "foto_url"
     t.integer "tahun"
+    t.string  "status_perkawinan"
+    t.string  "nama_pasangan"
+    t.string  "jumlah_anak"
+    t.string  "kelurahan_tinggal"
+    t.string  "kecamatan_tinggal"
+    t.string  "kab_kota_tinggal"
+    t.string  "provinsi_tinggal"
   end
-
-  add_index "candidates", ["calon_id"], name: "index_candidates_on_calon_id", unique: true
 
   create_table "electoral_districts", force: true do |t|
     t.string  "nama"
-    t.string  "singkatan"
-    t.integer "provinsi_id"
+    t.string  "nama_lengkap"
+    t.string  "id_provinsi"
+    t.string  "nama_lembaga"
+    t.integer "jumlah_kursi"
+    t.integer "jumlah_penduduk"
   end
 
   create_table "parties", force: true do |t|
     t.string "nama"
-    t.string "singkatan"
-    t.string "situs"
-    t.string "facebook"
-    t.string "twitter"
+    t.string "nama_lengkap"
+    t.string "url_situs"
+    t.string "url_facebook"
+    t.string "url_twitter"
   end
 
   create_table "provinces", force: true do |t|
     t.string  "nama"
-    t.string  "singkatan"
+    t.string  "nama_lengkap"
     t.string  "nama_inggris"
-    t.integer "kursi"
-    t.integer "penduduk"
+    t.integer "jumlah_kursi"
+    t.integer "jumlah_penduduk"
+  end
+
+  create_table "riwayat_organisasi_dprs", force: true do |t|
+    t.string "id_calon"
+    t.string "ringkasan"
+  end
+
+  create_table "riwayat_pekerjaan_dprs", force: true do |t|
+    t.string "id_calon"
+    t.string "ringkasan"
+  end
+
+  create_table "riwayat_pendidikan_dprs", force: true do |t|
+    t.string "id_calon"
+    t.string "ringkasan"
   end
 
 end
