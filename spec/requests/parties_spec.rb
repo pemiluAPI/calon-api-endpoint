@@ -16,13 +16,13 @@ describe Pemilu::API do
           parties: [{
             id: @pkb.id,
             nama: @pkb.nama,
-            singkatan: @pkb.singkatan,
-            situs: @pkb.situs
+            nama_lengkap: @pkb.nama_lengkap,
+            url_situs: @pkb.url_situs
           }, {
             id: @pan.id,
             nama: @pan.nama,
-            singkatan: @pan.singkatan,
-            situs: @pan.situs
+            nama_lengkap: @pan.nama_lengkap,
+            url_situs: @pan.url_situs
           }]
         }
       }.to_json
@@ -39,8 +39,8 @@ describe Pemilu::API do
           parties: [{
             id: @pkb.id,
             nama: @pkb.nama,
-            singkatan: @pkb.singkatan,
-            situs: @pkb.situs
+            nama_lengkap: @pkb.nama_lengkap,
+            url_situs: @pkb.url_situs
           }]
         }
       }.to_json

@@ -1,31 +1,47 @@
 FactoryGirl.define do
   factory :dpd1, class: Candidate do
-    id 1
+    id "1100-00-0000-0001"
     lembaga "DPD"
-    provinsi_id 11
-    dapil_id nil
-    partai_id nil
+    id_provinsi 11
+    id_dapil nil
+    id_partai nil
     urutan 1
-    calon_id "DPD1101"
     nama "ADNAN N.S"
     jenis_kelamin "L"
-    domisili "KOTA BANDA ACEH"
+    agama nil
+    tempat_lahir nil
+    tanggal_lahir nil    
     foto_url "http://dct.kpu.go.id/images/foto/DPD/11.%20NAD/01.jpg"
     tahun 2014
+    status_perkawinan nil
+    nama_pasangan nil
+    jumlah_anak nil
+    kelurahan_tinggal nil
+    kecamatan_tinggal nil
+    kab_kota_tinggal "KOTA BANDA ACEH"
+    provinsi_tinggal nil
   end
 
   factory :dpd2, class: Candidate do
-    id 2
+    id "1100-00-0000-0002"
     lembaga "DPD"
-    provinsi_id 11
-    dapil_id nil
-    partai_id nil
+    id_provinsi 11
+    id_dapil nil
+    id_partai nil
     urutan 2
-    calon_id "DPD1102"
     nama "Dr. AHMAD FARHAN HAMID, M.S."
     jenis_kelamin "L"
-    domisili "KOTA BANDA ACEH"
-    foto_url "http://dct.kpu.go.id/images/foto/DPD/11.%20NAD/03.jpg"
+    agama nil
+    tempat_lahir nil
+    tanggal_lahir nil    
+    foto_url "http://dct.kpu.go.id/images/foto/DPD/11.%20NAD/02.jpg"
     tahun 2014
+    status_perkawinan nil
+    nama_pasangan nil
+    jumlah_anak nil
+    kelurahan_tinggal nil
+    kecamatan_tinggal nil
+    kab_kota_tinggal "KOTA BANDA ACEH"
+    provinsi_tinggal nil
   end
 end
