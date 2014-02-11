@@ -20,6 +20,10 @@ describe Pemilu::API do
             {
               id: @aceh.id,
               nama: @aceh.nama,
+              nama_lengkap: @aceh.nama_lengkap,
+              nama_inggris: @aceh.nama_inggris,
+              jumlah_kursi: @aceh.jumlah_kursi,
+              jumlah_penduduk: @aceh.jumlah_penduduk,
               dapil: [
                 {
                   id: @dapil_aceh1.id,
@@ -34,6 +38,10 @@ describe Pemilu::API do
             {
               id: @jambi.id,
               nama: @jambi.nama,
+              nama_lengkap: @jambi.nama_lengkap,
+              nama_inggris: @jambi.nama_inggris,
+              jumlah_kursi: @jambi.jumlah_kursi,
+              jumlah_penduduk: @jambi.jumlah_penduduk,
               dapil: [
                 {
                   id: @dapil_jambi.id,
@@ -58,6 +66,10 @@ describe Pemilu::API do
             {
               id: @aceh.id,
               nama: @aceh.nama,
+              nama_lengkap: @aceh.nama_lengkap,
+              nama_inggris: @aceh.nama_inggris,
+              jumlah_kursi: @aceh.jumlah_kursi,
+              jumlah_penduduk: @aceh.jumlah_penduduk,
               dapil: [
                 {
                   id: @dapil_aceh1.id,
