@@ -11,7 +11,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140206095216) do
+ActiveRecord::Schema.define(version: 20140210040211) do
+
 
   create_table "candidates", id: false, force: true do |t|
     t.string  "id"
@@ -36,8 +37,7 @@ ActiveRecord::Schema.define(version: 20140206095216) do
     t.string  "provinsi_tinggal"
   end
 
-  create_table "electoral_districts", id: false, force: true do |t|
-    t.string  "id"
+  create_table "electoral_districts", force: true do |t|
     t.string  "nama"
     t.string  "nama_lengkap"
     t.string  "id_provinsi"
@@ -61,6 +61,21 @@ ActiveRecord::Schema.define(version: 20140206095216) do
     t.string  "nama_inggris"
     t.integer "jumlah_kursi"
     t.integer "jumlah_penduduk"
+  end
+
+  create_table "riwayat_organisasi_dprs", force: true do |t|
+    t.string "id_calon"
+    t.string "ringkasan"
+  end
+
+  create_table "riwayat_pekerjaan_dprs", force: true do |t|
+    t.string "id_calon"
+    t.string "ringkasan"
+  end
+
+  create_table "riwayat_pendidikan_dprs", force: true do |t|
+    t.string "id_calon"
+    t.string "ringkasan"
   end
 
 end
