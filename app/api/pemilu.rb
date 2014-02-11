@@ -60,9 +60,18 @@ module Pemilu
           .each do |candidate|
             candidates << {
               id: candidate.id,
+              tahun: candidate.tahun,
               lembaga: candidate.lembaga,
               nama: candidate.nama,
               jenis_kelamin: candidate.jenis_kelamin,
+              agama: candidate.agama,
+              tempat_lahir: candidate.tempat_lahir,
+              tanggal_lahir: candidate.tanggal_lahir,
+              status_perkawinan: candidate.status_perkawinan,
+              nama_pasangan: candidate.nama_pasangan,
+              jumlah_anak: candidate.jumlah_anak,
+              kelurahan_tinggal: candidate.kelurahan_tinggal,
+              kecamatan_tinggal: candidate.kecamatan_tinggal,
               kab_kota_tinggal: candidate.kab_kota_tinggal,
               provinsi_tinggal: candidate.provinsi_tinggal,
               riwayat_pendidikan: candidate.riwayat_pendidikan_dprs.select("id,ringkasan"),
@@ -99,9 +108,18 @@ module Pemilu
               total: 1,
               caleg: [{
                 id: candidate.id,
+                tahun: candidate.tahun,
                 lembaga: candidate.lembaga,
                 nama: candidate.nama,
                 jenis_kelamin: candidate.jenis_kelamin,
+                agama: candidate.agama,
+                tempat_lahir: candidate.tempat_lahir,
+                tanggal_lahir: candidate.tanggal_lahir,
+                status_perkawinan: candidate.status_perkawinan,
+                nama_pasangan: candidate.nama_pasangan,
+                jumlah_anak: candidate.jumlah_anak,
+                kelurahan_tinggal: candidate.kelurahan_tinggal,
+                kecamatan_tinggal: candidate.kecamatan_tinggal,
                 kab_kota_tinggal: candidate.kab_kota_tinggal,
                 provinsi_tinggal: candidate.provinsi_tinggal,
                 riwayat_pendidikan: candidate.riwayat_pendidikan_dprs.select("id,ringkasan"),
@@ -123,10 +141,14 @@ module Pemilu
       desc "Return all Provinces"
       get do
         provinces = Array.new
-        Province.select("id, nama").find_each do |province|
+        Province.find_each do |province|
           provinces << {
             id: province.id,
             nama: province.nama,
+            nama_lengkap: province.nama_lengkap,
+            nama_inggris: province.nama_inggris,
+            jumlah_kursi: province.jumlah_kursi,
+            jumlah_penduduk: province.jumlah_penduduk,
             dapil: province.electoral_districts.select("id, nama")
           }
         end
@@ -150,8 +172,12 @@ module Pemilu
               count: 1,
               total: 1,
               provinsi: [{
-                id: province.id,                
-                nama: province.nama,                
+                id: province.id,
+                nama: province.nama,
+                nama_lengkap: province.nama_lengkap,
+                nama_inggris: province.nama_inggris,
+                jumlah_kursi: province.jumlah_kursi,
+                jumlah_penduduk: province.jumlah_penduduk,
                 dapil: province.electoral_districts.select("id, nama")
               }]
             }
@@ -164,10 +190,14 @@ module Pemilu
       desc "Return all Electoral Districts"
       get do
         electoral_districts = Array.new
-        ElectoralDistrict.includes(:province).select("id, nama, id_provinsi").find_each do |electoral_district|
+        ElectoralDistrict.includes(:province).find_each do |electoral_district|
           electoral_districts << {
             id: electoral_district.id,
             nama: electoral_district.nama,
+            nama_lengkap: electoral_district.nama_lengkap,
+            nama_lembaga: electoral_district.nama_lembaga,
+            jumlah_kursi: electoral_district.jumlah_kursi,
+            jumlah_penduduk: electoral_district.jumlah_penduduk,
             provinsi: electoral_district.province
           }
         end
@@ -191,8 +221,12 @@ module Pemilu
               count: 1,
               total: 1,
               dapil: [{
-                id: dapil.id,                
-                nama: dapil.nama,                
+                id: dapil.id,
+                nama: dapil.nama,
+                nama_lengkap: dapil.nama_lengkap,
+                nama_lembaga: dapil.nama_lembaga,
+                jumlah_kursi: dapil.jumlah_kursi,
+                jumlah_penduduk: dapil.jumlah_penduduk,               
                 provinsi: dapil.province
               }]
             }
@@ -207,7 +241,7 @@ module Pemilu
         {
           results: {
             count: Party.count,
-            parties: Party.select("id, nama, nama_lengkap, url_situs")
+            parties: Party.select("id, nama, nama_lengkap, url_situs, url_facebook, url_twitter")
           }
         }
       end
@@ -218,7 +252,7 @@ module Pemilu
       end
       route_param :id do
         get do
-          party = Party.select("id, nama, nama_lengkap, url_situs").where(id: params[:id])
+          party = Party.select("id, nama, nama_lengkap, url_situs, url_facebook, url_twitter").where(id: params[:id])
 
           {
             results: {

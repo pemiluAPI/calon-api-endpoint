@@ -20,6 +20,10 @@ describe Pemilu::API do
             {
               id: @dapil_aceh1.id,
               nama: @dapil_aceh1.nama,
+              nama_lengkap: @dapil_aceh1.nama_lengkap,
+              nama_lembaga: @dapil_aceh1.nama_lembaga,
+              jumlah_kursi: @dapil_aceh1.jumlah_kursi,
+              jumlah_penduduk: @dapil_aceh1.jumlah_penduduk,
               provinsi: {
                 id: @aceh.id,
                 nama: @aceh.nama
@@ -28,6 +32,10 @@ describe Pemilu::API do
             {
               id: @dapil_aceh2.id,
               nama: @dapil_aceh2.nama,
+              nama_lengkap: @dapil_aceh2.nama_lengkap,
+              nama_lembaga: @dapil_aceh2.nama_lembaga,
+              jumlah_kursi: @dapil_aceh2.jumlah_kursi,
+              jumlah_penduduk: @dapil_aceh2.jumlah_penduduk,
               provinsi: {
                 id: @aceh.id,
                 nama: @aceh.nama
@@ -36,6 +44,10 @@ describe Pemilu::API do
             {
               id: @dapil_jambi.id,
               nama: @dapil_jambi.nama,
+              nama_lengkap: @dapil_jambi.nama_lengkap,
+              nama_lembaga: @dapil_jambi.nama_lembaga,
+              jumlah_kursi: @dapil_jambi.jumlah_kursi,
+              jumlah_penduduk: @dapil_jambi.jumlah_penduduk,
               provinsi: {
                 id: @jambi.id,
                 nama: @jambi.nama
@@ -58,6 +70,10 @@ describe Pemilu::API do
             {
               id: @dapil_aceh1.id,
               nama: @dapil_aceh1.nama,
+              nama_lengkap: @dapil_aceh1.nama_lengkap,
+              nama_lembaga: @dapil_aceh1.nama_lembaga,
+              jumlah_kursi: @dapil_aceh1.jumlah_kursi,
+              jumlah_penduduk: @dapil_aceh1.jumlah_penduduk,
               provinsi: {
                 id: @aceh.id,
                 nama: @aceh.nama
