@@ -75,9 +75,9 @@ module Pemilu
               kecamatan_tinggal: candidate.kecamatan_tinggal,
               kab_kota_tinggal: candidate.kab_kota_tinggal,
               provinsi_tinggal: candidate.provinsi_tinggal,
-              riwayat_pendidikan: candidate.riwayat_pendidikan_dprs.select("id,ringkasan"),
-              riwayat_pekerjaan: candidate.riwayat_pekerjaan_dprs.select("id,ringkasan"),
-              riwayat_organisasi: candidate.riwayat_organisasi_dprs.select("id,ringkasan"),
+              riwayat_pendidikan: candidate.riwayat_pendidikan_dprs,
+              riwayat_pekerjaan: candidate.riwayat_pekerjaan_dprs,
+              riwayat_organisasi: candidate.riwayat_organisasi_dprs,
               provinsi: candidate.province,
               dapil: candidate.electoral_district,
               partai: candidate.party,
@@ -123,9 +123,9 @@ module Pemilu
                 kecamatan_tinggal: candidate.kecamatan_tinggal,
                 kab_kota_tinggal: candidate.kab_kota_tinggal,
                 provinsi_tinggal: candidate.provinsi_tinggal,
-                riwayat_pendidikan: candidate.riwayat_pendidikan_dprs.select("id,ringkasan"),
-                riwayat_pekerjaan: candidate.riwayat_pekerjaan_dprs.select("id,ringkasan"),
-                riwayat_organisasi: candidate.riwayat_organisasi_dprs.select("id,ringkasan"),
+                riwayat_pendidikan: candidate.riwayat_pendidikan_dprs,
+                riwayat_pekerjaan: candidate.riwayat_pekerjaan_dprs,
+                riwayat_organisasi: candidate.riwayat_organisasi_dprs,
                 provinsi: candidate.province,
                 dapil: candidate.electoral_district,
                 partai: candidate.party,
@@ -138,7 +138,7 @@ module Pemilu
       end
     end
 
-    resource :provinces do
+    resource :provinsi do
       desc "Return all Provinces"
       get do
         provinces = Array.new
@@ -245,13 +245,13 @@ module Pemilu
       end
     end
 
-    resource :parties do
+    resource :partai do
       desc "Return all Parties"
       get do
         {
           results: {
             count: Party.count,
-            parties: Party.select("id, nama, nama_lengkap, url_situs, url_facebook, url_twitter")
+            partai: Party.select("id, nama, nama_lengkap, url_situs, url_facebook, url_twitter")
           }
         }
       end
@@ -267,7 +267,7 @@ module Pemilu
           {
             results: {
               count: party.count,
-              parties: party
+              partai: party
             }
           }
         end
