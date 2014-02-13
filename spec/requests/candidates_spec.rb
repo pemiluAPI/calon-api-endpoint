@@ -65,8 +65,8 @@ describe Pemilu::API do
               id: @aceh.id,
               nama: @aceh.nama
             },
-            dapil: {},
-            partai: {},
+            dapil: nil,
+            partai: nil,
             urutan: @dpd1.urutan,
             foto_url: @dpd1.foto_url
           }, {
@@ -101,8 +101,8 @@ describe Pemilu::API do
               id: @aceh.id,
               nama: @aceh.nama
             },
-            dapil: {},
-            partai: {},
+            dapil: nil,
+            partai: nil,
             urutan: @dpd2.urutan,
             foto_url: @dpd2.foto_url
           }]
@@ -160,8 +160,8 @@ describe Pemilu::API do
               id: @aceh.id,
               nama: @aceh.nama
             },
-            dapil: {},
-            partai: {},
+            dapil: nil,
+            partai: nil,
             urutan: @dpd1.urutan,
             foto_url: @dpd1.foto_url
           }]

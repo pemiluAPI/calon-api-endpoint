@@ -1,6 +1,6 @@
 module CandidateHelpers
   def build_province(candidate)
-    candidate.province.nil? ? {} : {
+      candidate.province.nil? ? {} : {
       id: candidate.province.id,
       nama: candidate.province.nama
     }
@@ -36,11 +36,12 @@ module Pemilu
         # Prepare conditions based on params
         valid_params = {
           lembaga: 'lembaga',
-          kelamin: 'kelamin',
+          jenis_kelamin: 'jenis_kelamin',
           dapil: 'id_dapil',
           partai: 'id_partai',
           provinsi: 'id_provinsi',
-          tahun: 'tahun'
+          tahun: 'tahun',
+          agama: 'agama'
         }
         conditions = Hash.new
         valid_params.each_pair do |key, value|
@@ -77,9 +78,9 @@ module Pemilu
               riwayat_pendidikan: candidate.riwayat_pendidikan_dprs.select("id,ringkasan"),
               riwayat_pekerjaan: candidate.riwayat_pekerjaan_dprs.select("id,ringkasan"),
               riwayat_organisasi: candidate.riwayat_organisasi_dprs.select("id,ringkasan"),
-              provinsi: build_province(candidate),
-              dapil: build_electoral_district(candidate),
-              partai: build_party(candidate),
+              provinsi: candidate.province,
+              dapil: candidate.electoral_district,
+              partai: candidate.party,
               urutan: candidate.urutan,
               foto_url: candidate.foto_url
             }
@@ -125,9 +126,9 @@ module Pemilu
                 riwayat_pendidikan: candidate.riwayat_pendidikan_dprs.select("id,ringkasan"),
                 riwayat_pekerjaan: candidate.riwayat_pekerjaan_dprs.select("id,ringkasan"),
                 riwayat_organisasi: candidate.riwayat_organisasi_dprs.select("id,ringkasan"),
-                provinsi: build_province(candidate),
-                dapil: build_electoral_district(candidate),
-                partai: build_party(candidate),
+                provinsi: candidate.province,
+                dapil: candidate.electoral_district,
+                partai: candidate.party,
                 urutan: candidate.urutan,
                 foto_url: candidate.foto_url
               }]
@@ -190,7 +191,16 @@ module Pemilu
       desc "Return all Electoral Districts"
       get do
         electoral_districts = Array.new
-        ElectoralDistrict.includes(:province).find_each do |electoral_district|
+        # Prepare conditions based on params
+        valid_params = {          
+          provinsi: 'id_provinsi',
+          lembaga: 'nama_lembaga'
+        }
+        conditions = Hash.new
+        valid_params.each_pair do |key, value|
+          conditions[value.to_sym] = params[key.to_sym] unless params[key.to_sym].blank?
+        end
+        ElectoralDistrict.includes(:province).where(conditions).find_each do |electoral_district|
           electoral_districts << {
             id: electoral_district.id,
             nama: electoral_district.nama,
