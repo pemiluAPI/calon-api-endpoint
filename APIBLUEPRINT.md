@@ -181,32 +181,28 @@ A list of Parties objects
         {
             "results": {
                 "count": 3,
-                "partai": [
-                    {
-                        "id": "1",
-                        "nama": "Partai NasDem",
-                        "nama_lengkap": "Partai NasDem",
-                        "url_situs": "http://www.partainasdem.org/",
-                        "url_facebook": "https://www.facebook.com/pages/Partai-Nasdem/135724689838285",
-                        "url_twitter": "https://twitter.com/NasDem"
-                    },
-                    {
-                        "id": "2",
-                        "nama": "PKB",
-                        "nama_lengkap": "Partai Kebangkitan Bangsa",
-                        "url_situs": "http://www.dpp.pkb.or.id/",
-                        "url_facebook": "https://www.facebook.com/pages/DPP-PKB/167600963307010",
-                        "url_twitter": "https://twitter.com/PKB_News_Online"
-                    },
-                    {
-                        "id": "3",
-                        "nama": "PKS",
-                        "nama_lengkap": "Partai Keadilan Sejahtera",
-                        "url_situs": "http://www.pks.or.id/",
-                        "url_facebook": "https://www.facebook.com/HumasPartaiKeadilanSejahtera",
-                        "url_twitter": "https://twitter.com/PKSejahtera"
-                    }
-                ]
+                "partai": [{
+                    "id": "1",
+                    "nama": "Partai NasDem",
+                    "nama_lengkap": "Partai NasDem",
+                    "url_situs": "http://www.partainasdem.org/",
+                    "url_facebook": "https://www.facebook.com/pages/Partai-Nasdem/135724689838285",
+                    "url_twitter": "https://twitter.com/NasDem"
+                }, {
+                    "id": "2",
+                    "nama": "PKB",
+                    "nama_lengkap": "Partai Kebangkitan Bangsa",
+                    "url_situs": "http://www.dpp.pkb.or.id/",
+                    "url_facebook": "https://www.facebook.com/pages/DPP-PKB/167600963307010",
+                    "url_twitter": "https://twitter.com/PKB_News_Online"
+                }, {
+                    "id": "3",
+                    "nama": "PKS",
+                    "nama_lengkap": "Partai Keadilan Sejahtera",
+                    "url_situs": "http://www.pks.or.id/",
+                    "url_facebook": "https://www.facebook.com/HumasPartaiKeadilanSejahtera",
+                    "url_twitter": "https://twitter.com/PKSejahtera"
+                }]
             }
         }
 
@@ -223,19 +219,16 @@ A single Parties object with all its details
         {
             "results": {
                 "count": 1,
-                "partai": [
-                    {
-                        "id": "3",
-                        "nama": "PKS",
-                        "nama_lengkap": "Partai Keadilan Sejahtera",
-                        "url_situs": "http://www.pks.or.id/",
-                        "url_facebook": "https://www.facebook.com/HumasPartaiKeadilanSejahtera",
-                        "url_twitter": "https://twitter.com/PKSejahtera"
-                    }
-                ]
+                "partai": [{
+                    "id": "3",
+                    "nama": "PKS",
+                    "nama_lengkap": "Partai Keadilan Sejahtera",
+                    "url_situs": "http://www.pks.or.id/",
+                    "url_facebook": "https://www.facebook.com/HumasPartaiKeadilanSejahtera",
+                    "url_twitter": "https://twitter.com/PKSejahtera"
+                }]
             }
         }
-
 
 # Group Provinces
 Provinces related resources of the **Candidates API**
@@ -252,27 +245,23 @@ A list of Province objects with abbreviated details (no contained dapil)
         {
             "results": {
                 "count": 2,
-                "provinsi": [
-                    {
-                        "id": "11",
-                        "nama": "Aceh",
-                        "nama_lengkap": "Aceh",
-                        "nama_inggris": "Special Region of Aceh",
-                        "jumlah_kursi": 13,
-                        "jumlah_penduduk": 5015234
-                    },
-                    {
-                        "id": "12",
-                        "nama": "Sumut",
-                        "nama_lengkap": "Sumatera Utara",
-                        "nama_inggris": "North Sumatra",
-                        "jumlah_kursi": 30,
-                        "jumlah_penduduk": 15227719
-                    }
-                ]
+                "provinsi": [{
+                    "id": "11",
+                    "nama": "Aceh",
+                    "nama_lengkap": "Aceh",
+                    "nama_inggris": "Special Region of Aceh",
+                    "jumlah_kursi": 13,
+                    "jumlah_penduduk": 5015234
+                }, {
+                    "id": "12",
+                    "nama": "Sumut",
+                    "nama_lengkap": "Sumatera Utara",
+                    "nama_inggris": "North Sumatra",
+                    "jumlah_kursi": 30,
+                    "jumlah_penduduk": 15227719
+                }]
             }
         }
-
 
 ## Provinces [/provinsi/{id}?apiKey={apiKey}]
 A single Provinces object with all its details
@@ -362,80 +351,73 @@ A list of Electoral Districts objects
         {
             "results": {
                 "count": 6,
-                "dapil": [
-                    {
-                        "id": "1101-00-0000",
-                        "nama": "Aceh I",
-                        "nama_lengkap": "Aceh I",
-                        "nama_lembaga": "DPR",
-                        "jumlah_kursi": 7,
-                        "jumlah_penduduk": 2642760,
-                        "provinsi": {
-                            "id": "11",
-                            "nama": "Aceh"
-                        }
-                    },
-                    {
-                        "id": "1100-01-0000",
-                        "nama": "Aceh 1",
-                        "nama_lengkap": "Aceh 1",
-                        "nama_lembaga": "DPRDI",
-                        "jumlah_kursi": 11,
-                        "jumlah_penduduk": 0,
-                        "provinsi": {
-                            "id": "11",
-                            "nama": "Aceh"
-                        }
-                    },
-                    {
-                        "id": "1100-01-0101",
-                        "nama": "Aceh Besar 1",
-                        "nama_lengkap": "Aceh Besar 1",
-                        "nama_lembaga": "DPRDII",
-                        "jumlah_kursi": 7,
-                        "jumlah_penduduk": 0,
-                        "provinsi": {
-                            "id": "11",
-                            "nama": "Aceh"
-                        }
-                    },
-                    {
-                        "id": "1201-00-0000",
-                        "nama": "Sumut I",
-                        "nama_lengkap": "Sumatera Utara I",
-                        "nama_lembaga": "DPR",
-                        "jumlah_kursi": 10,
-                        "jumlah_penduduk": 2686316,
-                        "provinsi": {
-                            "id": "12",
-                            "nama": "Sumut"
-                        }
-                    },
-                    {
-                        "id": "1200-01-0000",
-                        "nama": "Sumut 1",
-                        "nama_lengkap": "Sumatera Utara 1",
-                        "nama_lembaga": "DPRDI",
-                        "jumlah_kursi": 10,
-                        "jumlah_penduduk": 0,
-                        "provinsi": {
-                            "id": "12",
-                            "nama": "Sumut"
-                        }
-                    },
-                    {
-                        "id": "1200-01-0101",
-                        "nama": "Kota Medan 1",
-                        "nama_lengkap": "Kota Medan 1",
-                        "nama_lembaga": "DPRDII",
-                        "jumlah_kursi": 11,
-                        "jumlah_penduduk": 0,
-                        "provinsi": {
-                            "id": "12",
-                            "nama": "Sumut"
-                        }
+                "dapil": [{
+                    "id": "1101-00-0000",
+                    "nama": "Aceh I",
+                    "nama_lengkap": "Aceh I",
+                    "nama_lembaga": "DPR",
+                    "jumlah_kursi": 7,
+                    "jumlah_penduduk": 2642760,
+                    "provinsi": {
+                        "id": "11",
+                        "nama": "Aceh"
                     }
-                ]
+                }, {
+                    "id": "1100-01-0000",
+                    "nama": "Aceh 1",
+                    "nama_lengkap": "Aceh 1",
+                    "nama_lembaga": "DPRDI",
+                    "jumlah_kursi": 11,
+                    "jumlah_penduduk": 0,
+                    "provinsi": {
+                        "id": "11",
+                        "nama": "Aceh"
+                    }
+                }, {
+                    "id": "1100-01-0101",
+                    "nama": "Aceh Besar 1",
+                    "nama_lengkap": "Aceh Besar 1",
+                    "nama_lembaga": "DPRDII",
+                    "jumlah_kursi": 7,
+                    "jumlah_penduduk": 0,
+                    "provinsi": {
+                        "id": "11",
+                        "nama": "Aceh"
+                    }
+                }, {
+                    "id": "1201-00-0000",
+                    "nama": "Sumut I",
+                    "nama_lengkap": "Sumatera Utara I",
+                    "nama_lembaga": "DPR",
+                    "jumlah_kursi": 10,
+                    "jumlah_penduduk": 2686316,
+                    "provinsi": {
+                        "id": "12",
+                        "nama": "Sumut"
+                    }
+                }, {
+                    "id": "1200-01-0000",
+                    "nama": "Sumut 1",
+                    "nama_lengkap": "Sumatera Utara 1",
+                    "nama_lembaga": "DPRDI",
+                    "jumlah_kursi": 10,
+                    "jumlah_penduduk": 0,
+                    "provinsi": {
+                        "id": "12",
+                        "nama": "Sumut"
+                    }
+                }, {
+                    "id": "1200-01-0101",
+                    "nama": "Kota Medan 1",
+                    "nama_lengkap": "Kota Medan 1",
+                    "nama_lembaga": "DPRDII",
+                    "jumlah_kursi": 11,
+                    "jumlah_penduduk": 0,
+                    "provinsi": {
+                        "id": "12",
+                        "nama": "Sumut"
+                    }
+                }]
             }
         }
 
@@ -452,20 +434,18 @@ A single Electoral District object with all its details
         {
             "results": {
                 "count": 1,
-                "dapil": [
-                    {
-                        "id": "1101-00-0000",
-                        "nama": "Aceh I",
-                        "nama_lengkap": "Aceh I",
-                        "nama_lembaga": "DPR",
-                        "jumlah_kursi": 7,
-                        "jumlah_penduduk": 2642760,
-                        "provinsi": {
-                            "id": "11",
-                            "nama": "Aceh"
-                        }
+                "dapil": [{
+                    "id": "1101-00-0000",
+                    "nama": "Aceh I",
+                    "nama_lengkap": "Aceh I",
+                    "nama_lembaga": "DPR",
+                    "jumlah_kursi": 7,
+                    "jumlah_penduduk": 2642760,
+                    "provinsi": {
+                        "id": "11",
+                        "nama": "Aceh"
                     }
-                ]
+                }]
             }
         }
 
