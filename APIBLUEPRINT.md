@@ -8,6 +8,7 @@ The Candidate API is a service that provides information about candidates runnin
 Candidates related resources of the **Candidates API**
 
 ## Candidates Collection [/caleg?apiKey={apiKey}&tahun={tahun}&lembaga={lembaga}&jenis_kelamin={jenis_kelamin}&agama={agama}&provinsi={provinsi}&dapil={dapil}&partai={partai}&nama={nama}&limit={limit}&offset={offset}]
+A list of Candidates objects with abbreviated details (no riwayat pendidikan, pekerjaan, or organisasi)
 
 + Parameters
     + offset (optional, number, `300`) ... Number the offset from the beginning of the list of records to return (use in combination with `limit` to support pagination)
@@ -27,107 +28,69 @@ Candidates related resources of the **Candidates API**
 
         {
             "results": {
-                "count": 1,
-                "total": 1,
-                "caleg": [
-                    {
-                        "id": "1101-00-0000-0101",
-                        "tahun": "2014",
-                        "lembaga": "DPR",
-                        "nama": "Prof. Dr. BACHTIAR ALY, MA.",
-                        "jenis_kelamin": "L",
-                        "agama": "ISLAM",
-                        "tempat_lahir": "BANDA ACEH",
-                        "tanggal_lahir": "1949-12-21",
-                        "status_perkawinan": "KAWIN",
-                        "nama_pasangan": "Hj. Rr. INDRIJATI INAWANGSIH, SE",
-                        "jumlah_anak": 2,
-                        "kelurahan_tinggal": "PAMULANG TIMUR",
-                        "kecamatan_tinggal": "PAMULANG",
-                        "kab_kota_tinggal": "KOTA TANGERANG SELATAN",
-                        "provinsi_tinggal": "BANTEN",
-                        "riwayat_pendidikan": [
-                            {
-                               "ringkasan": "1957-1963, SD, SEKOLAH RAKYAT NEGERI, ACEH"
-                            },
-                            {
-                                "ringkasan": "1963-1966, SLTP, SMP NEGERI 1, BANDA ACEH",
-                            },
-                            {
-                                "ringkasan": "1963-1966 SLTP I NEGERI 1 BANDA ACEH",
-                            },
-                            {
-                                "ringkasan": "1966-1967, SMA NEGERI I BANDA ACEH",
-                            },
-                            {
-                                "ringkasan": "1967-1968, SLTA, SMA YPU, BANDUNG",
-                            },
-                            {
-                                "ringkasan": "1969-1971, FAKULTAS PUBLISTIK UNIVERSITAS PADJAJARAN, BANDUNG",
-                            },
-                            {
-                                "ringkasan": "1972-1984 STUDI ILMU KOMUNIKASI, ILMU POLITIK DAN SOSIOLOGI, WESTFAELISCHE - WILHELMS-UNIVERSITAET, MUENSTER, REP. FEDERAL JERMAN",
-                            },
-                            {
-                                "ringkasan": "1983 S3, DR. PHIL. UNIVERSITAET, MUENSTER, REP. FEDERAL JERMAN"
-                            }
-                        ],
-                        "riwayat_pekerjaan": [
-                            {
-                                "ringkasan": "1998-1998, FKP DPR RI, ANGGOTA TIM AHLI, JAKARTA",
-                            },
-                            {
-                                "ringkasan": "1998-1998, MPR RI, TIM AHLI, JAKARTA",
-                            },
-                            {
-                                "ringkasan": "2000-2005, TIM PENASEHAT PRESIDEN URUSAN ACEH ANGGOTA, JAKARTA",
-                            },
-                            {
-                                "ringkasan": "2000-2002, KEMENTRIAN POLKAM, PENASEHAT, JAKARTA",
-                            },
-                            {
-                                "ringkasan": "2005-2007, PEMERINTAHAN, TIM AHLI DPR RI, JAKARTA",
-                            },
-                            {
-                                "ringkasan": "2002-2005, PEMERINTAHAN, DUTA BESAR MESIR, MESIR"
-                            }
-                        ],
-                        "riwayat_organisasi": [
-                            {
-                                "ringkasan": "2013-SEKARANG, PARTAI NASDEM, KETUA DEWAN PAKAR DPP PARTAI NASDEM, JAKARTA",
-                            },
-                            {
-                                "ringkasan": "2010-SEKARANG, ORMAS NASIONAL DEMOKRAT, ANGGOTA DEWAN PERTIMBANGAN, JAKARTA",
-                            },
-                            {
-                                "ringkasan": "2007-SEKARANG, PENGURUS FORUM DUTA BESAR RI, JAKARTA",
-                            },
-                            {
-                                "ringkasan": "2009-2013, FISIP UI, KETUA DEWAN GURU BESAR JAKARTA",
-                            },
-                            {
-                                "ringkasan": "2010-2013, KOMITE PROFESOR UNTUK PERPUSTAKAAN UI, KETUA, JAKARTA",
-                            },
-                            {
-                                "ringkasan": "2011-2014, PERHIMPUNAN ALUMNI JERMAN, WAKIL KETUA DEWAN KEHORMATAN"
-                            }
-                        ],
-                        "provinsi": {
-                            "id": "11",
-                            "nama": "ACEH"
-                        },
-                        "dapil": {
-                            "id": "1101-00-0000",
-                            "nama": "ACEH I"
-                        },
-                        "partai": {
-                            "id": "1",
-                            "nama": "PARTAI NasDem"
-                        },
-                        "urutan": "1",
-                        "foto_url": "http://dct.kpu.go.id/images/foto/DPR/1101.%20ACEH%20I/01.%20NASDEM/01.%20PROF.%20DR.%20BACHTIAR%20ALY%2C%20MA.jpg"
-                    }
-                ]
+                "count": 2,
+                "total": 2,
+                "caleg": [{
+                    "id": "1101-00-0000-0101",
+                    "tahun": 2014,
+                    "lembaga": "DPR",
+                    "nama": "PROF. DR. BACHTIAR ALY, MA",
+                    "jenis_kelamin": "L",
+                    "agama": "ISLAM",
+                    "tempat_lahir": "BANDA ACEH",
+                    "tanggal_lahir": "1949-12-21",
+                    "status_perkawinan": "KAWIN",
+                    "nama_pasangan": "HJ. RR. INDRIJATI INAWANGSIH, SE",
+                    "jumlah_anak": "2",
+                    "kelurahan_tinggal": "PAMULANG TIMUR",
+                    "kecamatan_tinggal": "PAMULANG",
+                    "kab_kota_tinggal": "KOTA TANGERANG SELATAN",
+                    "provinsi_tinggal": "BANTEN",
+                    "provinsi": {
+                        "id": 11,
+                        "nama": "Aceh"
+                    },
+                    "dapil": {
+                        "id": "1101-00-0000",
+                        "nama": "Aceh I"
+                    },
+                    "partai": {
+                        "id": "1",
+                        "nama": "Partai NasDem"
+                    },
+                    "urutan": 1,
+                    "foto_url": "http:\/\/dct.kpu.go.id\/images\/foto\/DPR\/1101.%20ACEH%20I\/01.%20NASDEM\/01.%20PROF.%20DR.%20BACHTIAR%20ALY%2C%20MA.jpg"
+                }, {
+                    "id": "1101-00-0000-0102",
+                    "tahun": 2014,
+                    "lembaga": "DPR",
+                    "nama": "Drs. H. T. PRIBADI",
+                    "jenis_kelamin": "L",
+                    "agama": "ISLAM",
+                    "tempat_lahir": "BANDA ACEH",
+                    "tanggal_lahir": "1950-01-19",
+                    "status_perkawinan": "KAWIN",
+                    "nama_pasangan": "CUT MUSRI",
+                    "jumlah_anak": "3",
+                    "kelurahan_tinggal": "GEUCEU INIEM",
+                    "kecamatan_tinggal": "BANDA RAYA",
+                    "kab_kota_tinggal": "KOTA BANDA ACEH",
+                    "provinsi_tinggal": "ACEH",
+                    "provinsi": {
+                        "id": 11,
+                        "nama": "Aceh"
+                    },
+                    "dapil": {
+                        "id": "1101-00-0000",
+                        "nama": "Aceh I"
+                    },
+                    "partai": {
+                        "id": "1",
+                        "nama": "Partai NasDem"
+                    },
+                    "urutan": 2,
+                    "foto_url": "http:\/\/dct.kpu.go.id\/images\/foto\/DPR\/1101.%20ACEH%20I\/01.%20NASDEM\/02.%20DRS.%20H.T.%20PRIBADI.JPG"
+                }]
             }
         }
 
@@ -147,101 +110,56 @@ A single Candidates object with all its details
                 "total": 1,
                 "caleg": [
                     {
-                        "id": "1101-00-0000-0101",
-                        "tahun": "2014",
+                        "id": "1101-00-0000-0102",
+                        "tahun": 2014,
                         "lembaga": "DPR",
-                        "nama": "Prof. Dr. BACHTIAR ALY, MA.",
+                        "nama": "Drs. H. T. PRIBADI",
                         "jenis_kelamin": "L",
                         "agama": "ISLAM",
                         "tempat_lahir": "BANDA ACEH",
-                        "tanggal_lahir": "1949-12-21",
+                        "tanggal_lahir": "1950-01-19",
                         "status_perkawinan": "KAWIN",
-                        "nama_pasangan": "Hj. Rr. INDRIJATI INAWANGSIH, SE",
-                        "jumlah_anak": 2,
-                        "kelurahan_tinggal": "PAMULANG TIMUR",
-                        "kecamatan_tinggal": "PAMULANG",
-                        "kab_kota_tinggal": "KOTA TANGERANG SELATAN",
-                        "provinsi_tinggal": "BANTEN",
-                        "riwayat_pendidikan": [
-                            {
-                               "ringkasan": "1957-1963, SD, SEKOLAH RAKYAT NEGERI, ACEH"
-                            },
-                            {
-                                "ringkasan": "1963-1966, SLTP, SMP NEGERI 1, BANDA ACEH",
-                            },
-                            {
-                                "ringkasan": "1963-1966 SLTP I NEGERI 1 BANDA ACEH",
-                            },
-                            {
-                                "ringkasan": "1966-1967, SMA NEGERI I BANDA ACEH",
-                            },
-                            {
-                                "ringkasan": "1967-1968, SLTA, SMA YPU, BANDUNG",
-                            },
-                            {
-                                "ringkasan": "1969-1971, FAKULTAS PUBLISTIK UNIVERSITAS PADJAJARAN, BANDUNG",
-                            },
-                            {
-                                "ringkasan": "1972-1984 STUDI ILMU KOMUNIKASI, ILMU POLITIK DAN SOSIOLOGI, WESTFAELISCHE - WILHELMS-UNIVERSITAET, MUENSTER, REP. FEDERAL JERMAN",
-                            },
-                            {
-                                "ringkasan": "1983 S3, DR. PHIL. UNIVERSITAET, MUENSTER, REP. FEDERAL JERMAN"
-                            }
-                        ],
-                        "riwayat_pekerjaan": [
-                            {
-                                "ringkasan": "1998-1998, FKP DPR RI, ANGGOTA TIM AHLI, JAKARTA",
-                            },
-                            {
-                                "ringkasan": "1998-1998, MPR RI, TIM AHLI, JAKARTA",
-                            },
-                            {
-                                "ringkasan": "2000-2005, TIM PENASEHAT PRESIDEN URUSAN ACEH ANGGOTA, JAKARTA",
-                            },
-                            {
-                                "ringkasan": "2000-2002, KEMENTRIAN POLKAM, PENASEHAT, JAKARTA",
-                            },
-                            {
-                                "ringkasan": "2005-2007, PEMERINTAHAN, TIM AHLI DPR RI, JAKARTA",
-                            },
-                            {
-                                "ringkasan": "2002-2005, PEMERINTAHAN, DUTA BESAR MESIR, MESIR"
-                            }
-                        ],
-                        "riwayat_organisasi": [
-                            {
-                                "ringkasan": "2013-SEKARANG, PARTAI NASDEM, KETUA DEWAN PAKAR DPP PARTAI NASDEM, JAKARTA",
-                            },
-                            {
-                                "ringkasan": "2010-SEKARANG, ORMAS NASIONAL DEMOKRAT, ANGGOTA DEWAN PERTIMBANGAN, JAKARTA",
-                            },
-                            {
-                                "ringkasan": "2007-SEKARANG, PENGURUS FORUM DUTA BESAR RI, JAKARTA",
-                            },
-                            {
-                                "ringkasan": "2009-2013, FISIP UI, KETUA DEWAN GURU BESAR JAKARTA",
-                            },
-                            {
-                                "ringkasan": "2010-2013, KOMITE PROFESOR UNTUK PERPUSTAKAAN UI, KETUA, JAKARTA",
-                            },
-                            {
-                                "ringkasan": "2011-2014, PERHIMPUNAN ALUMNI JERMAN, WAKIL KETUA DEWAN KEHORMATAN"
-                            }
-                        ],
+                        "nama_pasangan": "CUT MUSRI",
+                        "jumlah_anak": "3",
+                        "kelurahan_tinggal": "GEUCEU INIEM",
+                        "kecamatan_tinggal": "BANDA RAYA",
+                        "kab_kota_tinggal": "KOTA BANDA ACEH",
+                        "provinsi_tinggal": "ACEH",
+                        "riwayat_pendidikan": [{
+                            "id": 9,
+                            "ringkasan": "1982-1983, S1, UNIVERSITAS ISKANDAR MUDA, BANDA ACEH"
+                        }],
+                        "riwayat_pekerjaan": [{
+                            "id": 7,
+                            "ringkasan": "2006-2007, PEMERINTAHAN, PEJABAT BUPATI ACEH UTARA"
+                        }],
+                        "riwayat_organisasi": [{
+                            "id": 7,
+                            "ringkasan": "1991-1991, GM KOSGORO, WAKIL KETUA DPD, ACEH"
+                        }, {
+                            "id": 8,
+                            "ringkasan": "2009-2002, SOKSI, WAKIL KETUA, ACEH"
+                        }, {
+                            "id": 9,
+                            "ringkasan": "2010-2013, NASIONAL DEMOKRAT, KETUA DPW, ACEH"
+                        }, {
+                            "id": 10,
+                            "ringkasan": "2011-2013, PARTAI NASDEM, KETUA DEWAN PERTIMBANGAN, ACEH"
+                        }],
                         "provinsi": {
-                            "id": "11",
-                            "nama": "ACEH"
+                            "id": 11,
+                            "nama": "Aceh"
                         },
                         "dapil": {
                             "id": "1101-00-0000",
-                            "nama": "ACEH I"
+                            "nama": "Aceh I"
                         },
                         "partai": {
                             "id": "1",
-                            "nama": "PARTAI NasDem"
+                            "nama": "Partai NasDem"
                         },
-                        "urutan": "1",
-                        "foto_url": "http://dct.kpu.go.id/images/foto/DPR/1101.%20ACEH%20I/01.%20NASDEM/01.%20PROF.%20DR.%20BACHTIAR%20ALY%2C%20MA.jpg"
+                        "urutan": 2,
+                        "foto_url": "http:\/\/dct.kpu.go.id\/images\/foto\/DPR\/1101.%20ACEH%20I\/01.%20NASDEM\/02.%20DRS.%20H.T.%20PRIBADI.JPG"
                     }
                 ]
             }
@@ -252,6 +170,7 @@ A single Candidates object with all its details
 Parties related resources of the **Candidates API**
 
 ## Parties Collection [/partai?apiKey={apiKey}]
+A list of Parties objects
 
 + Parameters
     + apiKey (required, string, `06ec082d057daa3d310b27483cc3962e`) ... String `apiKey` of the application.
@@ -322,6 +241,7 @@ A single Parties object with all its details
 Provinces related resources of the **Candidates API**
 
 ## Provinces Collection [/provinsi?apiKey={apiKey}]
+A list of Province objects with abbreviated details (no contained dapil)
 
 + Parameters
     + apiKey (required, string, `06ec082d057daa3d310b27483cc3962e`) ... String `apiKey` of the application.
@@ -354,10 +274,82 @@ Provinces related resources of the **Candidates API**
         }
 
 
+## Provinces [/provinsi/{id}?apiKey={apiKey}]
+A single Provinces object with all its details
+
++ Parameters
+    + apiKey (required, string, `06ec082d057daa3d310b27483cc3962e`) ... String `apiKey` of the application.
+    + id (required, string, `11`) ... String `id` of the Province to perform action with.
+
+### Retrieve a Province [GET]
++ Response 200 (application/json)
+
+        {
+            "data": {
+                "results": {
+                    "count": 1,
+                    "total": 1,
+                    "provinsi": [{
+                        "id": 11,
+                        "nama": "Aceh",
+                        "nama_lengkap": "Aceh",
+                        "nama_inggris": "Special Region of Aceh",
+                        "jumlah_kursi": 13,
+                        "jumlah_penduduk": 5015234,
+                        "dapil": [{
+                            "id": "1101-00-0000",
+                            "nama": "Aceh I"
+                        }, {
+                            "id": "1100-01-0000",
+                            "nama": "Aceh 1"
+                        }, {
+                            "id": "1100-01-0101",
+                            "nama": "Aceh Besar 1"
+                        }, {
+                            "id": "1100-01-0102",
+                            "nama": "Aceh Besar 2"
+                        }, {
+                            "id": "1100-01-0103",
+                            "nama": "Aceh Besar 3"
+                        }, {
+                            "id": "1100-01-0104",
+                            "nama": "Aceh Besar 4"
+                        }, {
+                            "id": "1100-01-0105",
+                            "nama": "Aceh Besar 5"
+                        }, {
+                            "id": "1100-01-0201",
+                            "nama": "Kota Banda Aceh 1"
+                        }, {
+                            "id": "1100-01-0202",
+                            "nama": "Kota Banda Aceh 2"
+                        }, {
+                            "id": "1100-01-0203",
+                            "nama": "Kota Banda Aceh 3"
+                        }, {
+                            "id": "1100-01-0204",
+                            "nama": "Kota Banda Aceh 4"
+                        }, {
+                            "id": "1100-01-0205",
+                            "nama": "Kota Banda Aceh 5"
+                        }, {
+                            "id": "1100-01-0301",
+                            "nama": "Kota Sabang 1"
+                        }, {
+                            "id": "1100-01-0302",
+                            "nama": "Kota Sabang 2"
+                        }]
+                    }]
+                }
+            }
+        }
+
+
 # Group Electoral Districts
 Electoral Districts related resources of the **Candidates API**
 
 ## Electoral Districts Collection [/dapil?apiKey={apiKey}&provinsi={provinsi}&nama_lembaga={nama_lembaga}]
+A list of Electoral Districts objects
 
 + Parameters
     + nama_lembaga (optional, string, `DPRDI`) ... String `nama_lembaga` (name of the body) to filter the districts by.
