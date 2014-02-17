@@ -40,8 +40,7 @@ module Pemilu
           dapil: 'id_dapil',
           partai: 'id_partai',
           provinsi: 'id_provinsi',
-          tahun: 'tahun',
-          agama: 'agama'
+          tahun: 'tahun'
         }
         conditions = Hash.new
         valid_params.each_pair do |key, value|
@@ -51,7 +50,7 @@ module Pemilu
         # Set default year
         conditions[:tahun] = params[:tahun] || 2014
 
-        search = ["nama LIKE ?", "%#{params[:nama]}%"]
+        search = ["nama LIKE ? and agama LIKE ?", "%#{params[:nama]}%", "%#{params[:agama]}%"]
 
         Candidate.includes(:province, :electoral_district, :party)
           .where(conditions)
@@ -75,9 +74,6 @@ module Pemilu
               kecamatan_tinggal: candidate.kecamatan_tinggal,
               kab_kota_tinggal: candidate.kab_kota_tinggal,
               provinsi_tinggal: candidate.provinsi_tinggal,
-              riwayat_pendidikan: candidate.riwayat_pendidikan_dprs,
-              riwayat_pekerjaan: candidate.riwayat_pekerjaan_dprs,
-              riwayat_organisasi: candidate.riwayat_organisasi_dprs,
               provinsi: candidate.province,
               dapil: candidate.electoral_district,
               partai: candidate.party,
@@ -101,39 +97,39 @@ module Pemilu
       end
       route_param :id do
         get do
-          candidate = Candidate.find_by(id: params[:id])
+            candidate = Candidate.find_by(id: params[:id])
 
-          {
-            results: {
-              count: 1,
-              total: 1,
-              caleg: [{
-                id: candidate.id,
-                tahun: candidate.tahun,
-                lembaga: candidate.lembaga,
-                nama: candidate.nama,
-                jenis_kelamin: candidate.jenis_kelamin,
-                agama: candidate.agama,
-                tempat_lahir: candidate.tempat_lahir,
-                tanggal_lahir: candidate.tanggal_lahir,
-                status_perkawinan: candidate.status_perkawinan,
-                nama_pasangan: candidate.nama_pasangan,
-                jumlah_anak: candidate.jumlah_anak,
-                kelurahan_tinggal: candidate.kelurahan_tinggal,
-                kecamatan_tinggal: candidate.kecamatan_tinggal,
-                kab_kota_tinggal: candidate.kab_kota_tinggal,
-                provinsi_tinggal: candidate.provinsi_tinggal,
-                riwayat_pendidikan: candidate.riwayat_pendidikan_dprs,
-                riwayat_pekerjaan: candidate.riwayat_pekerjaan_dprs,
-                riwayat_organisasi: candidate.riwayat_organisasi_dprs,
-                provinsi: candidate.province,
-                dapil: candidate.electoral_district,
-                partai: candidate.party,
-                urutan: candidate.urutan,
-                foto_url: candidate.foto_url
-              }]
+            {
+              results: {
+                count: 1,
+                total: 1,
+                caleg: [{
+                  id: candidate.id,
+                  tahun: candidate.tahun,
+                  lembaga: candidate.lembaga,
+                  nama: candidate.nama,
+                  jenis_kelamin: candidate.jenis_kelamin,
+                  agama: candidate.agama,
+                  tempat_lahir: candidate.tempat_lahir,
+                  tanggal_lahir: candidate.tanggal_lahir,
+                  status_perkawinan: candidate.status_perkawinan,
+                  nama_pasangan: candidate.nama_pasangan,
+                  jumlah_anak: candidate.jumlah_anak,
+                  kelurahan_tinggal: candidate.kelurahan_tinggal,
+                  kecamatan_tinggal: candidate.kecamatan_tinggal,
+                  kab_kota_tinggal: candidate.kab_kota_tinggal,
+                  provinsi_tinggal: candidate.provinsi_tinggal,
+                  riwayat_pendidikan: candidate.riwayat_pendidikan_dprs,
+                  riwayat_pekerjaan: candidate.riwayat_pekerjaan_dprs,
+                  riwayat_organisasi: candidate.riwayat_organisasi_dprs,
+                  provinsi: candidate.province,
+                  dapil: candidate.electoral_district,
+                  partai: candidate.party,
+                  urutan: candidate.urutan,
+                  foto_url: candidate.foto_url
+                }]
+              }
             }
-          }
         end
       end
     end
@@ -149,8 +145,7 @@ module Pemilu
             nama_lengkap: province.nama_lengkap,
             nama_inggris: province.nama_inggris,
             jumlah_kursi: province.jumlah_kursi,
-            jumlah_penduduk: province.jumlah_penduduk,
-            dapil: province.electoral_districts.select("id, nama")
+            jumlah_penduduk: province.jumlah_penduduk
           }
         end
 

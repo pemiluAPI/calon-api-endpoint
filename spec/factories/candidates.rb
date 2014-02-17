@@ -8,7 +8,7 @@ FactoryGirl.define do
     urutan 1
     nama "ADNAN N.S"
     jenis_kelamin "L"
-    agama nil
+    agama "KRISTEN PROTESTAN"
     tempat_lahir nil
     tanggal_lahir nil    
     foto_url "http://dct.kpu.go.id/images/foto/DPD/11.%20NAD/01.jpg"
@@ -31,7 +31,7 @@ FactoryGirl.define do
     urutan 2
     nama "Dr. AHMAD FARHAN HAMID, M.S."
     jenis_kelamin "L"
-    agama nil
+    agama "KRISTEN PROTESTAN"
     tempat_lahir nil
     tanggal_lahir nil    
     foto_url "http://dct.kpu.go.id/images/foto/DPD/11.%20NAD/02.jpg"

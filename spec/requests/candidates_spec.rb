@@ -39,28 +39,7 @@ describe Pemilu::API do
             kelurahan_tinggal: @dpd1.kelurahan_tinggal,
             kecamatan_tinggal: @dpd1.kecamatan_tinggal,
             kab_kota_tinggal: @dpd1.kab_kota_tinggal,
-            provinsi_tinggal: @dpd1.provinsi_tinggal,
-            riwayat_pendidikan: [{
-                    id: @riwayat_pend1.id,
-                    ringkasan: @riwayat_pend1.ringkasan
-                    },{
-                    id: @riwayat_pend2.id,
-                    ringkasan: @riwayat_pend2.ringkasan
-                    }],
-            riwayat_pekerjaan: [{
-                    id: @riwayat_krj1.id,
-                    ringkasan: @riwayat_krj1.ringkasan
-                    },{
-                    id: @riwayat_krj2.id,
-                    ringkasan: @riwayat_krj2.ringkasan
-                    }],
-            riwayat_organisasi: [{
-                    id: @riwayat_org1.id,
-                    ringkasan: @riwayat_org1.ringkasan
-                    },{
-                    id: @riwayat_org2.id,
-                    ringkasan: @riwayat_org2.ringkasan
-                    }],
+            provinsi_tinggal: @dpd1.provinsi_tinggal,            
             provinsi: {
               id: @aceh.id,
               nama: @aceh.nama
@@ -85,18 +64,6 @@ describe Pemilu::API do
             kecamatan_tinggal: @dpd2.kecamatan_tinggal,
             kab_kota_tinggal: @dpd2.kab_kota_tinggal,
             provinsi_tinggal: @dpd2.provinsi_tinggal,
-            riwayat_pendidikan: [{
-                    id: @riwayat_pend3.id,
-                    ringkasan: @riwayat_pend3.ringkasan
-                    }],
-            riwayat_pekerjaan: [{
-                    id: @riwayat_krj3.id,
-                    ringkasan: @riwayat_krj3.ringkasan
-                    }],
-            riwayat_organisasi: [{
-                    id: @riwayat_org3.id,
-                    ringkasan: @riwayat_org3.ringkasan
-                    }],
             provinsi: {
               id: @aceh.id,
               nama: @aceh.nama
