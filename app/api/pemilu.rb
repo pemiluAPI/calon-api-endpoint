@@ -74,9 +74,6 @@ module Pemilu
               kecamatan_tinggal: candidate.kecamatan_tinggal,
               kab_kota_tinggal: candidate.kab_kota_tinggal,
               provinsi_tinggal: candidate.provinsi_tinggal,
-              riwayat_pendidikan: candidate.riwayat_pendidikan_dprs,
-              riwayat_pekerjaan: candidate.riwayat_pekerjaan_dprs,
-              riwayat_organisasi: candidate.riwayat_organisasi_dprs,
               provinsi: candidate.province,
               dapil: candidate.electoral_district,
               partai: candidate.party,
@@ -100,66 +97,6 @@ module Pemilu
       end
       route_param :id do
         get do
-          if params[:id] == "list"
-            candidates = Array.new
-
-            # Prepare conditions based on params
-            valid_params = {
-              lembaga: 'lembaga',
-              jenis_kelamin: 'jenis_kelamin',
-              dapil: 'id_dapil',
-              partai: 'id_partai',
-              provinsi: 'id_provinsi',
-              tahun: 'tahun'
-            }
-            conditions = Hash.new
-            valid_params.each_pair do |key, value|
-              conditions[value.to_sym] = params[key.to_sym] unless params[key.to_sym].blank?
-            end
-
-            # Set default year
-            conditions[:tahun] = params[:tahun] || 2014
-
-            search = ["nama LIKE ? and agama LIKE ?", "%#{params[:nama]}%", "%#{params[:agama]}%"]
-
-            Candidate.includes(:province, :electoral_district, :party)
-              .where(conditions)
-              .where(search)
-              .limit(params[:limit])
-              .offset(params[:offset])
-              .each do |candidate|
-                candidates << {
-                  id: candidate.id,
-                  tahun: candidate.tahun,
-                  lembaga: candidate.lembaga,
-                  nama: candidate.nama,
-                  jenis_kelamin: candidate.jenis_kelamin,
-                  agama: candidate.agama,
-                  tempat_lahir: candidate.tempat_lahir,
-                  tanggal_lahir: candidate.tanggal_lahir,
-                  status_perkawinan: candidate.status_perkawinan,
-                  nama_pasangan: candidate.nama_pasangan,
-                  jumlah_anak: candidate.jumlah_anak,
-                  kelurahan_tinggal: candidate.kelurahan_tinggal,
-                  kecamatan_tinggal: candidate.kecamatan_tinggal,
-                  kab_kota_tinggal: candidate.kab_kota_tinggal,
-                  provinsi_tinggal: candidate.provinsi_tinggal,                 
-                  provinsi: candidate.province,
-                  dapil: candidate.electoral_district,
-                  partai: candidate.party,
-                  urutan: candidate.urutan,
-                  foto_url: candidate.foto_url
-                }
-            end
-
-            {
-              results: {
-                count: candidates.count,
-                total: Candidate.where(conditions).where(search).count,
-                caleg: candidates
-              }
-            }
-          else
             candidate = Candidate.find_by(id: params[:id])
 
             {
@@ -193,7 +130,6 @@ module Pemilu
                 }]
               }
             }
-          end          
         end
       end
     end
