@@ -17,7 +17,7 @@ A list of Candidates objects with abbreviated details (no riwayat pendidikan, pe
     + partai (optional, string, `1`) ... String id of the `partai` (party) that the candidate is a member of
     + dapil (optional, string, `1101-00-0000`) ... String id of the `dapil` (electoral district) that the candidate is running in.
     + provinsi (optional, string, `11`) ... String id of the `provinsi` (province) that the candidate is running in.
-    + agama (optional, string, `islam`) ... String `agama` (religion) of the candidate.
+    + agama (optional, string, `islam`) ... String full or partial `agama` (religion) of the candidate. Will return all matching records.
     + jenis_kelamin (optional, string, `L`) ... String `jenis_kelamin` (gender) of the candidate.
     + lembaga (optional, string, `DPD`) ... String `lembaga` (legislative body) that the candidate is running for.
     + tahun (optional, number, `2014`) ... Number `tahun` (election year) that the candidate is running for.
