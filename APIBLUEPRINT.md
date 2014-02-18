@@ -1,5 +1,5 @@
 FORMAT: 1A
-HOST: http://www.pemiluapi.org
+HOST: http://api.pemiluapi.org/candidate/api/
 
 # Candidate API
 The Candidate API is a service that provides information about candidates running for office in the 2014 Indonesian elections.
@@ -337,11 +337,11 @@ A single Provinces object with all its details
 # Group Electoral Districts
 Electoral Districts related resources of the **Candidates API**
 
-## Electoral Districts Collection [/dapil?apiKey={apiKey}&provinsi={provinsi}&nama_lembaga={nama_lembaga}]
+## Electoral Districts Collection [/dapil?apiKey={apiKey}&provinsi={provinsi}&lembaga={lembaga}]
 A list of Electoral Districts objects
 
 + Parameters
-    + nama_lembaga (optional, string, `DPRDI`) ... String `nama_lembaga` (name of the body) to filter the districts by.
+    + lembaga (optional, string, `DPRDI`) ... String name of the `lembaga` (electoral body) to filter the districts by.
     + provinsi (optional, string, `11`) ... String id of the `provinsi` (province) to filter the districts by.
     + apiKey (required, string, `06ec082d057daa3d310b27483cc3962e`) ... String `apiKey` of the application.
 
