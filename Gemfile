@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.1'
+gem 'rails', '4.0.3'
 
 # Use mysql as the database for Active Record
 gem 'mysql2'
@@ -45,10 +45,14 @@ gem 'simplecov', :require => false, :group => :test
 
 gem 'thin', "~> 1.5.1"
 gem 'rake', "~> 10.1.0"
-gem 'capistrano', "~> 3.0.0"
+gem 'capistrano', "~> 3.1.0"
 gem 'capistrano-bundler'
 gem 'capistrano-rails'
 gem 'capistrano-rbenv', github: "capistrano/rbenv"
+
+group :production, :development do
+  gem 'newrelic_rpm'
+end
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
