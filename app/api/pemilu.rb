@@ -189,14 +189,14 @@ module Pemilu
         # Prepare conditions based on params
         valid_params = {          
           provinsi: 'id_provinsi',
-          lembaga: 'nama_lembaga'
+          lembaga: 'nama_lembaga',
+          nama: 'nama_lengkap'
         }
         conditions = Hash.new
         valid_params.each_pair do |key, value|
           conditions[value.to_sym] = params[key.to_sym] unless params[key.to_sym].blank?
         end
-        search = ["nama_lengkap = ?", "#{params[:nama]}"]
-        ElectoralDistrict.includes(:province).where(conditions).where(search).find_each do |electoral_district|
+        ElectoralDistrict.includes(:province).where(conditions).find_each do |electoral_district|
           electoral_districts << {
             id: electoral_district.id,
             nama: electoral_district.nama,
