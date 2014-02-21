@@ -195,7 +195,8 @@ module Pemilu
         valid_params.each_pair do |key, value|
           conditions[value.to_sym] = params[key.to_sym] unless params[key.to_sym].blank?
         end
-        ElectoralDistrict.includes(:province).where(conditions).find_each do |electoral_district|
+        search = ["nama_lengkap = ?", "#{params[:nama]}"]
+        ElectoralDistrict.includes(:province).where(conditions).where(search).find_each do |electoral_district|
           electoral_districts << {
             id: electoral_district.id,
             nama: electoral_district.nama,
