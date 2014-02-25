@@ -189,7 +189,8 @@ module Pemilu
         # Prepare conditions based on params
         valid_params = {          
           provinsi: 'id_provinsi',
-          lembaga: 'nama_lembaga'
+          lembaga: 'nama_lembaga',
+          nama: 'nama_lengkap'
         }
         conditions = Hash.new
         valid_params.each_pair do |key, value|
