@@ -138,7 +138,14 @@ module Pemilu
       desc "Return all Provinces"
       get do
         provinces = Array.new
-        Province.find_each do |province|
+        valid_params = {
+            nama: 'nama_lengkap'
+        }
+        conditions = Hash.new
+        valid_params.each_pair do |key, value|
+          conditions[value.to_sym] = params[key.to_sym] unless params[key.to_sym].blank?
+        end  
+        Province.where(conditions).find_each do |province|
           provinces << {
             id: province.id,
             nama: province.nama,
