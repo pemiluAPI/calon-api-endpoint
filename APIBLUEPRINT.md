@@ -187,21 +187,27 @@ A list of Parties objects
                     "nama_lengkap": "Partai NasDem",
                     "url_situs": "http://www.partainasdem.org/",
                     "url_facebook": "https://www.facebook.com/pages/Partai-Nasdem/135724689838285",
-                    "url_twitter": "https://twitter.com/NasDem"
+                    "url_twitter": "https://twitter.com/NasDem",
+                    "url_logo_small": "http://apipemilu-caleg.s3-website-ap-southeast-1.amazonaws.com/partai/logos/01-100.jpg",
+                    "url_logo_medium": "http://apipemilu-caleg.s3-website-ap-southeast-1.amazonaws.com/partai/logos/01-200.jpg"
                 }, {
                     "id": "2",
                     "nama": "PKB",
                     "nama_lengkap": "Partai Kebangkitan Bangsa",
                     "url_situs": "http://www.dpp.pkb.or.id/",
                     "url_facebook": "https://www.facebook.com/pages/DPP-PKB/167600963307010",
-                    "url_twitter": "https://twitter.com/PKB_News_Online"
+                    "url_twitter": "https://twitter.com/PKB_News_Online",
+                    "url_logo_small": "http://apipemilu-caleg.s3-website-ap-southeast-1.amazonaws.com/partai/logos/02-100.jpg",
+                    "url_logo_medium": "http://apipemilu-caleg.s3-website-ap-southeast-1.amazonaws.com/partai/logos/02-200.jpg"
                 }, {
                     "id": "3",
                     "nama": "PKS",
                     "nama_lengkap": "Partai Keadilan Sejahtera",
                     "url_situs": "http://www.pks.or.id/",
                     "url_facebook": "https://www.facebook.com/HumasPartaiKeadilanSejahtera",
-                    "url_twitter": "https://twitter.com/PKSejahtera"
+                    "url_twitter": "https://twitter.com/PKSejahtera",
+                    "url_logo_small": "http://apipemilu-caleg.s3-website-ap-southeast-1.amazonaws.com/partai/logos/03-100.jpg",
+                    "url_logo_medium": "http://apipemilu-caleg.s3-website-ap-southeast-1.amazonaws.com/partai/logos/03-200.jpg"
                 }]
             }
         }
@@ -225,7 +231,9 @@ A single Parties object with all its details
                     "nama_lengkap": "Partai Keadilan Sejahtera",
                     "url_situs": "http://www.pks.or.id/",
                     "url_facebook": "https://www.facebook.com/HumasPartaiKeadilanSejahtera",
-                    "url_twitter": "https://twitter.com/PKSejahtera"
+                    "url_twitter": "https://twitter.com/PKSejahtera",
+                    "url_logo_small": "http://apipemilu-caleg.s3-website-ap-southeast-1.amazonaws.com/partai/logos/03-100.jpg",
+                    "url_logo_medium": "http://apipemilu-caleg.s3-website-ap-southeast-1.amazonaws.com/partai/logos/03-200.jpg"
                 }]
             }
         }
