@@ -254,7 +254,7 @@ module Pemilu
         {
           results: {
             count: Party.count,
-            partai: Party.select("id, nama, nama_lengkap, url_situs, url_facebook, url_twitter")
+            partai: Party.all
           }
         }
       end
@@ -265,7 +265,7 @@ module Pemilu
       end
       route_param :id do
         get do
-          party = Party.select("id, nama, nama_lengkap, url_situs, url_facebook, url_twitter").where(id: params[:id])
+          party = Party.where(id: params[:id])
 
           {
             results: {
