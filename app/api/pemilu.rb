@@ -55,7 +55,7 @@ module Pemilu
         Candidate.includes(:province, :electoral_district, :party)
           .where(conditions)
           .where(search)
-          .limit(params[:limit])
+          .limit(params[:limit] || 100)
           .offset(params[:offset])
           .each do |candidate|
             candidates << {
