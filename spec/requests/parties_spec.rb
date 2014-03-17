@@ -19,14 +19,18 @@ describe Pemilu::API do
             nama_lengkap: @pkb.nama_lengkap,
             url_situs: @pkb.url_situs,
             url_facebook: @pkb.url_facebook,
-            url_twitter: @pkb.url_twitter
+            url_twitter: @pkb.url_twitter,
+            url_logo_small: @pkb.url_logo_small,
+            url_logo_medium: @pkb.url_logo_medium,
           }, {
             id: @pan.id,
             nama: @pan.nama,
             nama_lengkap: @pan.nama_lengkap,
             url_situs: @pan.url_situs,
             url_facebook: @pan.url_facebook,
-            url_twitter: @pan.url_twitter
+            url_twitter: @pan.url_twitter,
+            url_logo_small: @pan.url_logo_small,
+            url_logo_medium: @pan.url_logo_medium,
           }]
         }
       }.to_json
@@ -46,7 +50,9 @@ describe Pemilu::API do
             nama_lengkap: @pkb.nama_lengkap,
             url_situs: @pkb.url_situs,
             url_facebook: @pkb.url_facebook,
-            url_twitter: @pkb.url_twitter
+            url_twitter: @pkb.url_twitter,
+            url_logo_small: @pkb.url_logo_small,
+            url_logo_medium: @pkb.url_logo_medium,
           }]
         }
       }.to_json
