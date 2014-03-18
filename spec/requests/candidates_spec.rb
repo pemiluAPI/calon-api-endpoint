@@ -76,6 +76,23 @@ describe Pemilu::API do
         }
       }.to_json
     end
+
+    it "should limit params is work" do
+      get "/api/caleg?limit=1"
+      ress = JSON.parse(response.body)
+      ress["results"]["count"].should == 1
+      ress["results"]["total"].should == 2
+    end
+
+    it "when limit == 0 should return all data" do
+      get "/api/caleg?limit=0"
+      ress = JSON.parse(response.body)
+      ress["results"]["count"].should == 2
+      ress["results"]["total"].should == 2
+    end
+
+    
+    
   end
 
   describe "GET /api/caleg/1100-00-0000-0001" do

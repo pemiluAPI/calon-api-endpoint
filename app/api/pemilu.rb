@@ -49,13 +49,18 @@ module Pemilu
 
         # Set default year
         conditions[:tahun] = params[:tahun] || 2014
+        
+        # Set default limit
+        params[:limit] = 2000 if params[:limit].blank?
+        params[:limit] = nil if params[:limit] && params[:limit].to_i == 0
 
+        # search data
         search = ["nama LIKE ? and agama LIKE ?", "%#{params[:nama]}%", "%#{params[:agama]}%"]
 
         Candidate.includes(:province, :electoral_district, :party)
           .where(conditions)
           .where(search)
-          .limit(params[:limit] || 100)
+          .limit(params[:limit])
           .offset(params[:offset])
           .each do |candidate|
             candidates << {
