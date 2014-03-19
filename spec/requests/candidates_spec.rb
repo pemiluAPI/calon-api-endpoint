@@ -39,7 +39,7 @@ describe Pemilu::API do
             kelurahan_tinggal: @dpd1.kelurahan_tinggal,
             kecamatan_tinggal: @dpd1.kecamatan_tinggal,
             kab_kota_tinggal: @dpd1.kab_kota_tinggal,
-            provinsi_tinggal: @dpd1.provinsi_tinggal,            
+            provinsi_tinggal: @dpd1.provinsi_tinggal,
             provinsi: {
               id: @aceh.id,
               nama: @aceh.nama
@@ -77,22 +77,24 @@ describe Pemilu::API do
       }.to_json
     end
 
-    it "should limit params is work" do
+    it "should returns 1 caleg" do
       get "/api/caleg?limit=1"
-      ress = JSON.parse(response.body)
-      ress["results"]["count"].should == 1
-      ress["results"]["total"].should == 2
+      response.status.should == 200
+      body = JSON.parse(response.body)
+      body["results"]["count"].should == 1
+      body["results"]["total"].should == 2
     end
 
-    it "when limit == 0 should return all data" do
+    it "should returns all caleg" do
       get "/api/caleg?limit=0"
-      ress = JSON.parse(response.body)
-      ress["results"]["count"].should == 2
-      ress["results"]["total"].should == 2
+      response.status.should == 200
+      body = JSON.parse(response.body)
+      body["results"]["count"].should == 2
+      body["results"]["total"].should == 2
     end
 
-    
-    
+
+
   end
 
   describe "GET /api/caleg/1100-00-0000-0001" do

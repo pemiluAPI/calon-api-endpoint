@@ -49,18 +49,16 @@ module Pemilu
 
         # Set default year
         conditions[:tahun] = params[:tahun] || 2014
-        
-        # Set default limit
-        params[:limit] = 2000 if params[:limit].blank?
-        params[:limit] = nil if params[:limit] && params[:limit].to_i == 0
 
-        # search data
+        # Set default limit
+        limit = (params[:limit].to_i == 0 || params[:limit].empty?) ? 2000 : params[:limit]
+
         search = ["nama LIKE ? and agama LIKE ?", "%#{params[:nama]}%", "%#{params[:agama]}%"]
 
         Candidate.includes(:province, :electoral_district, :party)
           .where(conditions)
           .where(search)
-          .limit(params[:limit])
+          .limit(limit)
           .offset(params[:offset])
           .each do |candidate|
             candidates << {
@@ -149,7 +147,7 @@ module Pemilu
         conditions = Hash.new
         valid_params.each_pair do |key, value|
           conditions[value.to_sym] = params[key.to_sym] unless params[key.to_sym].blank?
-        end  
+        end
         Province.where(conditions).find_each do |province|
           provinces << {
             id: province.id,
@@ -174,7 +172,7 @@ module Pemilu
       end
       route_param :id do
         get do
-            province = Province.find_by(id: params[:id])            
+            province = Province.find_by(id: params[:id])
           {
             results: {
               count: 1,
@@ -199,7 +197,7 @@ module Pemilu
       get do
         electoral_districts = Array.new
         # Prepare conditions based on params
-        valid_params = {          
+        valid_params = {
           provinsi: 'id_provinsi',
           lembaga: 'nama_lembaga',
           nama: 'nama_lengkap'
@@ -244,7 +242,7 @@ module Pemilu
                 nama_lengkap: dapil.nama_lengkap,
                 nama_lembaga: dapil.nama_lembaga,
                 jumlah_kursi: dapil.jumlah_kursi,
-                jumlah_penduduk: dapil.jumlah_penduduk,               
+                jumlah_penduduk: dapil.jumlah_penduduk,
                 provinsi: dapil.province
               }]
             }
