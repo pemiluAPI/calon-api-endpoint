@@ -11,9 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140211065505) do
+ActiveRecord::Schema.define(version: 20140307104747) do
 
-  create_table "candidates", force: true do |t|
+  create_table "candidates", id: false, force: true do |t|
+    t.string  "id"
     t.string  "lembaga"
     t.string  "id_provinsi"
     t.string  "id_dapil"
@@ -35,7 +36,8 @@ ActiveRecord::Schema.define(version: 20140211065505) do
     t.string  "provinsi_tinggal"
   end
 
-  create_table "electoral_districts", force: true do |t|
+  create_table "electoral_districts", id: false, force: true do |t|
+    t.string  "id"
     t.string  "nama"
     t.string  "nama_lengkap"
     t.string  "id_provinsi"
@@ -44,12 +46,15 @@ ActiveRecord::Schema.define(version: 20140211065505) do
     t.integer "jumlah_penduduk"
   end
 
-  create_table "parties", force: true do |t|
+  create_table "parties", id: false, force: true do |t|
+    t.string "id"
     t.string "nama"
     t.string "nama_lengkap"
     t.string "url_situs"
     t.string "url_facebook"
     t.string "url_twitter"
+    t.string "url_logo_small"
+    t.string "url_logo_medium"
   end
 
   create_table "provinces", force: true do |t|
