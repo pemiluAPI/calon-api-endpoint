@@ -15,5 +15,10 @@
 /log/*.log
 /tmp
 
-database.yml
-coverage
+/config/database.yml
+/nbproject
+
+/coverage
+
+/config/deploy/
+/config/deploy.rb

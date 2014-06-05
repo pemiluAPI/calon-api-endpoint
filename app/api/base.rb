@@ -3,9 +3,11 @@
 # and open the template in the editor.
 
 require 'v1/pemilu.rb'
+#require 'v2/pemilu.rb'
 
 module Base
   class API < Grape::API
     mount Pemilu::APIv1
+    #mount Pemilu::APIv2
   end
 end

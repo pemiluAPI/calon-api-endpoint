@@ -44,7 +44,7 @@ gem 'factory_girl_rails', "~> 4.2.1"
 gem 'simplecov', :require => false, :group => :test
 
 gem 'thin', "~> 1.5.1"
-gem 'rake', "~> 10.1.0"
+gem 'rake', "~> 10.3.2"
 gem 'capistrano', "~> 3.1.0"
 gem 'capistrano-bundler'
 gem 'capistrano-rails'

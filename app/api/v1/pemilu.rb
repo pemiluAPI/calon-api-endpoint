@@ -52,13 +52,18 @@ module Pemilu
         conditions[:tahun] = params[:tahun] || 2014
 
         # Set default limit
-        limit = (params[:limit].to_i == 0 || params[:limit].empty?) ? 2000 : params[:limit]
+        limit = (params[:limit].to_i == 0 || params[:limit].empty?) ? 1000 : params[:limit]
 
         search = ["nama LIKE ? and agama LIKE ?", "%#{params[:nama]}%", "%#{params[:agama]}%"]
+        
+        unless params[:acara_terpilih].nil?
+          terpilih_search = params[:acara_terpilih].downcase == 'true' ? ["terpilih = ?", params[:acara_terpilih]] : ""
+        end
 
         Candidate.includes(:province, :electoral_district, :party)
           .where(conditions)
           .where(search)
+          .where(terpilih_search)
           .limit(limit)
           .offset(params[:offset])
           .each do |candidate|
@@ -82,14 +87,17 @@ module Pemilu
               dapil: candidate.electoral_district,
               partai: candidate.party,
               urutan: candidate.urutan,
-              foto_url: candidate.foto_url
+              foto_url: candidate.foto_url,
+              suara_sah: candidate.suara_sah,
+              peringkat_suara_sah_calon: candidate.peringkat_suara_sah_calon,
+              terpilih: candidate.terpilih
             }
         end
 
         {
           results: {
             count: candidates.count,
-            total: Candidate.where(conditions).where(search).count,
+            total: Candidate.where(conditions).where(search).where(terpilih_search).count,
             caleg: candidates
           }
         }
@@ -130,7 +138,10 @@ module Pemilu
                   dapil: candidate.electoral_district,
                   partai: candidate.party,
                   urutan: candidate.urutan,
-                  foto_url: candidate.foto_url
+                  foto_url: candidate.foto_url,
+                  suara_sah: candidate.suara_sah,
+                  peringkat_suara_sah_calon: candidate.peringkat_suara_sah_calon,
+                  terpilih: candidate.terpilih
                 }]
               }
             }
