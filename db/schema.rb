@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140605072708) do
+ActiveRecord::Schema.define(version: 20140609085618) do
 
   create_table "candidates", force: true do |t|
     t.string  "lembaga"
@@ -63,6 +63,7 @@ ActiveRecord::Schema.define(version: 20140605072708) do
     t.string  "nama_inggris"
     t.integer "jumlah_kursi"
     t.integer "jumlah_penduduk"
+    t.integer "pro_id"
   end
 
   create_table "riwayat_organisasi_dprs", force: true do |t|

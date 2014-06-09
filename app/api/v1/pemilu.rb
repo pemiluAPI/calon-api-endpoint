@@ -167,7 +167,8 @@ module Pemilu
             nama_lengkap: province.nama_lengkap,
             nama_inggris: province.nama_inggris,
             jumlah_kursi: province.jumlah_kursi,
-            jumlah_penduduk: province.jumlah_penduduk
+            jumlah_penduduk: province.jumlah_penduduk,
+            pro_id: province.pro_id
           }
         end
 
@@ -196,6 +197,7 @@ module Pemilu
                 nama_inggris: province.nama_inggris,
                 jumlah_kursi: province.jumlah_kursi,
                 jumlah_penduduk: province.jumlah_penduduk,
+                pro_id: province.pro_id,
                 dapil: province.electoral_districts.select("id, nama")
               }]
             }
