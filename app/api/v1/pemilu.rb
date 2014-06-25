@@ -268,10 +268,26 @@ module Pemilu
     resource :partai do
       desc "Return all Parties"
       get do
+        partai = Array.new
+        Party.all.each do |party|
+          colors_collection = PartyColor.where("id_partai = ?", party.id).order(:id)
+          partai << {
+            id: party.id,
+            nama: party.nama,
+            nama_lengkap: party.nama_lengkap,
+            url_situs: party.url_situs,
+            url_facebook: party.url_facebook,
+            url_twitter: party.url_twitter,
+            url_logo_mini: party.url_logo_mini,
+            url_logo_small: party.url_logo_small,
+            url_logo_medium: party.url_logo_medium,
+            colors: colors_collection.map { |color| color.color }
+          }
+        end
         {
           results: {
             count: Party.count,
-            partai: Party.all
+            partai: partai
           }
         }
       end
@@ -282,12 +298,22 @@ module Pemilu
       end
       route_param :id do
         get do
-          party = Party.where(id: params[:id])
-
+          party = Party.find_by(id: params[:id])
           {
             results: {
-              count: party.count,
-              partai: party
+              count: 1,
+              partai: [{
+                  id: party.id,
+                  nama: party.nama,
+                  nama_lengkap: party.nama_lengkap,
+                  url_situs: party.url_situs,
+                  url_facebook: party.url_facebook,
+                  url_twitter: party.url_twitter,
+                  url_logo_mini: party.url_logo_mini,
+                  url_logo_small: party.url_logo_small,
+                  url_logo_medium: party.url_logo_medium,
+                  colors: party.party_colors.order(:id).map { |color| color.color }
+                }]
             }
           }
         end

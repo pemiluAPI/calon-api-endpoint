@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140609085618) do
+ActiveRecord::Schema.define(version: 20140625031651) do
 
   create_table "candidates", force: true do |t|
     t.string  "lembaga"
@@ -53,8 +53,14 @@ ActiveRecord::Schema.define(version: 20140609085618) do
     t.string "url_situs"
     t.string "url_facebook"
     t.string "url_twitter"
+    t.string "url_logo_mini"
     t.string "url_logo_small"
     t.string "url_logo_medium"
+  end
+
+  create_table "party_colors", force: true do |t|
+    t.string "id_partai"
+    t.string "color"
   end
 
   create_table "provinces", force: true do |t|
